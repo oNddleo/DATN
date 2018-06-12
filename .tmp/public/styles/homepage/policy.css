@@ -1,0 +1,60 @@
+#policy{
+    background: #fafafa;
+    margin: 0;
+}
+.policy-item {
+    margin: 20px 0 0;
+    padding: 55px 0;
+}
+#policy .pi-wrap i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: all .3s ease-out 0s;
+    margin: auto;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-size: 38px;
+    line-height: 40px;
+    color: #c80204;
+}
+#policy .pi-wrap:hover i {
+    background-color: transparent;
+    color: #333;
+}
+#policy .pi-wrap h4 {
+    color: #333;
+    padding: 15px 0 0;
+}
+
+.pi-wrap h4 {
+    margin: 0;
+    padding: 23px 0 0;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    color: #FFF;
+    line-height: 20px;
+}
+#policy .pi-wrap h4 span {
+    color: #666;
+    font-weight: 400;
+}
+.pi-wrap h4 span {
+    display: block;
+    text-transform: none;
+    font-family: Raleway,sans-serif;
+    color: #CCC;
+}
+.pi-wrap h4, .pi-wrap h4 span {
+    font-weight: 700;
+    position: relative;
+    font-size: 14px;
+}
+
+.pi-wrap h4, .pi-wrap h4 span {
+    font-weight: 700;
+    position: relative;
+    font-size: 14px;
+}
