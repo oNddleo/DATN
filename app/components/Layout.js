@@ -8,6 +8,7 @@ import $ from 'jquery'
 import VertifyOrder from './vertifyOrder/VertifyOrder';
 import Login from 'app/components/account/Login'
 import ForgotPassword from './account/ForgotPassword';
+import Register from './account/Register';
 export default class Layout extends Component {
   componentDidMount(){
     var header = $(".sticky-wrapper");
@@ -34,8 +35,9 @@ export default class Layout extends Component {
           {/* <HomePage /> */}
           {/* <ShopContent url={'images/bannerShop/quan-kaki-nam-banner.jpg'}/> */}
           {/* <VertifyOrder /> */}
-          <Login />
+          {/* <Login /> */}
           {/* <ForgotPassword /> */}
+          <Register />
         <div className="footer">
           <Footer />
           

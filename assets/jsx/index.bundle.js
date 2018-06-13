@@ -9222,7 +9222,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // import Product from './Product/Product';
 
 
-var store = __webpack_require__(582);
+var store = __webpack_require__(583);
 
 var App = function (_Component) {
     _inherits(App, _Component);
@@ -9351,6 +9351,18 @@ var _VertifyOrder = __webpack_require__(580);
 
 var _VertifyOrder2 = _interopRequireDefault(_VertifyOrder);
 
+var _Login = __webpack_require__(794);
+
+var _Login2 = _interopRequireDefault(_Login);
+
+var _ForgotPassword = __webpack_require__(795);
+
+var _ForgotPassword2 = _interopRequireDefault(_ForgotPassword);
+
+var _Register = __webpack_require__(796);
+
+var _Register2 = _interopRequireDefault(_Register);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9397,7 +9409,7 @@ var Layout = function (_Component) {
           { className: 'sticky-wrapper', style: { height: "85px" } },
           _react2.default.createElement(_StickyWrapper2.default, null)
         ),
-        _react2.default.createElement(_VertifyOrder2.default, null),
+        _react2.default.createElement(_Register2.default, null),
         _react2.default.createElement(
           'div',
           { className: 'footer' },
@@ -9917,6 +9929,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Cart = __webpack_require__(793);
+
+var _Cart2 = _interopRequireDefault(_Cart);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9935,207 +9951,162 @@ var StickyWrapper = function (_Component) {
     }
 
     _createClass(StickyWrapper, [{
-        key: "render",
+        key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                "header",
+                'header',
                 null,
                 _react2.default.createElement(
-                    "nav",
-                    { className: "navbar navbar-default" },
+                    'nav',
+                    { className: 'navbar navbar-default' },
                     _react2.default.createElement(
-                        "div",
-                        { className: "container", style: { height: "100%" } },
+                        'div',
+                        { className: 'container', style: { height: "100%" } },
                         _react2.default.createElement(
-                            "div",
-                            { className: "row", style: { height: "100%" } },
+                            'div',
+                            { className: 'row', style: { height: "100%" } },
                             _react2.default.createElement(
-                                "div",
-                                { className: "navbar-header" },
+                                'div',
+                                { className: 'navbar-header' },
                                 _react2.default.createElement(
-                                    "a",
-                                    { className: "navbar-brand", href: "/", title: "thoi trang nam" },
-                                    _react2.default.createElement("img", { src: "logo.png", className: "img-responsive", alt: "thoi trang nam" })
+                                    'a',
+                                    { className: 'navbar-brand', href: '/', title: 'thoi trang nam' },
+                                    _react2.default.createElement('img', { src: 'logo.png', className: 'img-responsive', alt: 'thoi trang nam' })
                                 )
                             ),
                             _react2.default.createElement(
-                                "div",
-                                { className: "header-xtra pull-right" },
+                                'div',
+                                { className: 'header-xtra pull-right' },
+                                _react2.default.createElement(_Cart2.default, null),
                                 _react2.default.createElement(
-                                    "div",
-                                    { className: "topcart" },
-                                    " ",
+                                    'div',
+                                    { className: 'topsearch' },
+                                    ' ',
                                     _react2.default.createElement(
-                                        "span",
+                                        'span',
                                         null,
-                                        _react2.default.createElement("i", { className: "fa fa-shopping-cart" })
+                                        ' ',
+                                        _react2.default.createElement('i', { className: 'fa fa-search' }),
+                                        ' '
                                     ),
                                     _react2.default.createElement(
-                                        "div",
-                                        { className: "cart-info" },
-                                        " ",
-                                        _react2.default.createElement(
-                                            "small",
-                                            null,
-                                            "\u0110\xE3 ch\u1ECDn ",
-                                            _react2.default.createElement(
-                                                "em",
-                                                { className: "highlight" },
-                                                _react2.default.createElement(
-                                                    "span",
-                                                    { className: "cartTopRightQuantity" },
-                                                    "0"
-                                                ),
-                                                " S\u1EA3n ph\u1EA9m"
-                                            ),
-                                            " trong gi\u1ECF h\xE0ng"
-                                        ),
-                                        _react2.default.createElement("div", { className: "cartTopRightContent" }),
-                                        _react2.default.createElement(
-                                            "div",
-                                            { className: "ci-total cartTopRightTotal", style: { display: "none" } },
-                                            "T\u1ED5ng: 0"
-                                        ),
-                                        _react2.default.createElement(
-                                            "div",
-                                            { className: "cart-btn cartTopRightButtons", style: { display: "none" } },
-                                            _react2.default.createElement(
-                                                "a",
-                                                { href: "/thanh-toan/step-1.html", title: "thanh toan", className: "myBtn-Primary" },
-                                                "G\u1EEDi \u0111\u01A1n h\xE0ng"
-                                            )
-                                        )
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    "div",
-                                    { className: "topsearch" },
-                                    " ",
-                                    _react2.default.createElement(
-                                        "span",
-                                        null,
-                                        " ",
-                                        _react2.default.createElement("i", { className: "fa fa-search" }),
-                                        " "
-                                    ),
-                                    _react2.default.createElement(
-                                        "form",
-                                        { id: "searchbox", className: "searchtop", action: "/tim-kiem.html", method: "post" },
-                                        _react2.default.createElement("input", { className: "search_query form-control", type: "text", id: "search_query_top", name: "text", placeholder: "T\xECm ki\u1EBFm", value: "" })
+                                        'form',
+                                        { id: 'searchbox', className: 'searchtop', action: '/tim-kiem.html', method: 'post' },
+                                        _react2.default.createElement('input', { className: 'search_query form-control', type: 'text', id: 'search_query_top', name: 'text', placeholder: 'T\xECm ki\u1EBFm', value: '' })
                                     )
                                 )
                             ),
                             _react2.default.createElement(
-                                "div",
-                                { className: "collapse navbar-collapse" },
+                                'div',
+                                { className: 'collapse navbar-collapse' },
                                 _react2.default.createElement(
-                                    "ul",
-                                    { className: "nav navbar-nav navbar-right" },
+                                    'ul',
+                                    { className: 'nav navbar-nav navbar-right' },
                                     _react2.default.createElement(
-                                        "li",
-                                        { className: "dropdown menu" },
+                                        'li',
+                                        { className: 'dropdown menu' },
                                         _react2.default.createElement(
-                                            "a",
-                                            { href: "/ao-nam", title: "Ao Nam", className: "dropdown-toogle", "data-toggle": "dropdown" },
-                                            "\xC1o nam"
+                                            'a',
+                                            { href: '/ao-nam', title: 'Ao Nam', className: 'dropdown-toogle', 'data-toggle': 'dropdown' },
+                                            '\xC1o nam'
                                         ),
                                         _react2.default.createElement(
-                                            "ul",
-                                            { className: "mega-menu dropdown-menu" },
+                                            'ul',
+                                            { className: 'mega-menu dropdown-menu' },
                                             _react2.default.createElement(
-                                                "li",
+                                                'li',
                                                 null,
                                                 _react2.default.createElement(
-                                                    "div",
+                                                    'div',
                                                     null,
                                                     _react2.default.createElement(
-                                                        "h5",
+                                                        'h5',
                                                         null,
                                                         _react2.default.createElement(
-                                                            "a",
-                                                            { href: "/ao-so-mi-nam.html" },
-                                                            "\xC1o s\u01A1 mi Nam"
+                                                            'a',
+                                                            { href: '/ao-so-mi-nam.html' },
+                                                            '\xC1o s\u01A1 mi Nam'
                                                         )
                                                     ),
                                                     _react2.default.createElement(
-                                                        "a",
-                                                        { href: "/ao-so-mi-nam.html" },
-                                                        "\xC1o s\u01A1 mi HQ"
+                                                        'a',
+                                                        { href: '/ao-so-mi-nam.html' },
+                                                        '\xC1o s\u01A1 mi HQ'
                                                     ),
                                                     _react2.default.createElement(
-                                                        "a",
-                                                        { href: "/ao-so-mi-nam.html" },
-                                                        "\xC1o s\u01A1 mi VN"
+                                                        'a',
+                                                        { href: '/ao-so-mi-nam.html' },
+                                                        '\xC1o s\u01A1 mi VN'
                                                     ),
                                                     _react2.default.createElement(
-                                                        "a",
-                                                        { href: "/ao-so-mi-nam.html" },
-                                                        "\xC1o s\u01A1 mi ng\u1EAFn tay"
+                                                        'a',
+                                                        { href: '/ao-so-mi-nam.html' },
+                                                        '\xC1o s\u01A1 mi ng\u1EAFn tay'
                                                     )
                                                 )
                                             )
                                         )
                                     ),
                                     _react2.default.createElement(
-                                        "li",
-                                        { className: "dropdown menu" },
+                                        'li',
+                                        { className: 'dropdown menu' },
                                         _react2.default.createElement(
-                                            "a",
-                                            { href: "/quan-nam", title: "Quan Nam" },
-                                            "Qu\u1EA7n nam"
+                                            'a',
+                                            { href: '/quan-nam', title: 'Quan Nam' },
+                                            'Qu\u1EA7n nam'
                                         ),
                                         _react2.default.createElement(
-                                            "ul",
-                                            { className: "mega-menu dropdown-menu" },
+                                            'ul',
+                                            { className: 'mega-menu dropdown-menu' },
                                             _react2.default.createElement(
-                                                "li",
+                                                'li',
                                                 null,
                                                 _react2.default.createElement(
-                                                    "div",
+                                                    'div',
                                                     null,
                                                     _react2.default.createElement(
-                                                        "h5",
+                                                        'h5',
                                                         null,
                                                         _react2.default.createElement(
-                                                            "a",
-                                                            { href: "/ao-so-mi-nam.html" },
-                                                            "Qu\u1EA7n JEAN Nam"
+                                                            'a',
+                                                            { href: '/ao-so-mi-nam.html' },
+                                                            'Qu\u1EA7n JEAN Nam'
                                                         )
                                                     ),
                                                     _react2.default.createElement(
-                                                        "a",
-                                                        { href: "/ao-so-mi-nam.html" },
-                                                        "Qu\u1EA7n Jean skinny"
+                                                        'a',
+                                                        { href: '/ao-so-mi-nam.html' },
+                                                        'Qu\u1EA7n Jean skinny'
                                                     ),
                                                     _react2.default.createElement(
-                                                        "a",
-                                                        { href: "/ao-so-mi-nam.html" },
-                                                        "Qu\u1EA7n r\xE1ch"
+                                                        'a',
+                                                        { href: '/ao-so-mi-nam.html' },
+                                                        'Qu\u1EA7n r\xE1ch'
                                                     )
                                                 )
                                             )
                                         )
                                     ),
                                     _react2.default.createElement(
-                                        "li",
-                                        { className: "dropdown" },
+                                        'li',
+                                        { className: 'dropdown' },
                                         _react2.default.createElement(
-                                            "a",
-                                            { href: "/giay-nam", title: "Giay Nam" },
-                                            "Gi\xE0y nam"
+                                            'a',
+                                            { href: '/giay-nam', title: 'Giay Nam' },
+                                            'Gi\xE0y nam'
                                         )
                                     ),
                                     _react2.default.createElement(
-                                        "li",
-                                        { className: "hidden-sm hidden-md" },
+                                        'li',
+                                        { className: 'hidden-sm hidden-md' },
                                         _react2.default.createElement(
-                                            "a",
-                                            { href: "/khuyen-mai.html", title: "khuyen mai" },
-                                            "Khuy\u1EBFn m\xE3i",
+                                            'a',
+                                            { href: '/khuyen-mai.html', title: 'khuyen mai' },
+                                            'Khuy\u1EBFn m\xE3i',
                                             _react2.default.createElement(
-                                                "span",
-                                                { className: "nav-badge" },
-                                                "Hot"
+                                                'span',
+                                                { className: 'nav-badge' },
+                                                'Hot'
                                             )
                                         )
                                     )
@@ -41019,7 +40990,7 @@ var _VertifyItem = __webpack_require__(581);
 
 var _VertifyItem2 = _interopRequireDefault(_VertifyItem);
 
-var _VertifyPayment = __webpack_require__(792);
+var _VertifyPayment = __webpack_require__(582);
 
 var _VertifyPayment2 = _interopRequireDefault(_VertifyPayment);
 
@@ -41238,21 +41209,174 @@ exports.default = VertifyItem;
 "use strict";
 
 
-var _redux = __webpack_require__(97);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-var _reducers = __webpack_require__(583);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reducers2 = _interopRequireDefault(_reducers);
+var _react = __webpack_require__(0);
 
-var _reduxThunk = __webpack_require__(587);
-
-var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/** Show redux with redux devtools*/
-var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
-module.exports = store;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var VertifyPayment = function (_Component) {
+    _inherits(VertifyPayment, _Component);
+
+    function VertifyPayment() {
+        _classCallCheck(this, VertifyPayment);
+
+        return _possibleConstructorReturn(this, (VertifyPayment.__proto__ || Object.getPrototypeOf(VertifyPayment)).apply(this, arguments));
+    }
+
+    _createClass(VertifyPayment, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "payment" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "btn-payment" },
+                    _react2.default.createElement(
+                        "button",
+                        { className: "btn-checkout" },
+                        "TI\u1EBEN H\xC0NH THANH TO\xC1N"
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "checkout-address" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "address-heading" },
+                        _react2.default.createElement(
+                            "p",
+                            { className: "address-hat" },
+                            "Thanh to\xE1n v\u1EADn chuy\u1EC3n"
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "address-title-container" },
+                            _react2.default.createElement(
+                                "span",
+                                { className: "address-title" },
+                                "Giao h\xE0ng t\u1EDBi"
+                            ),
+                            _react2.default.createElement(
+                                "a",
+                                { href: "#", className: "address-edit" },
+                                "CH\u1EC8NH S\u1EECA"
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "address-info" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "address-name" },
+                            "Nguy\u1EC5n \u0110\u1EE9c Long"
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "address-info-item address-info-value" },
+                            "Thanh Oai H\xE0 N\u1ED9i"
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "address-info-item address-info-phone" },
+                            "0915834454"
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "summary-session" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "summary-session-heading" },
+                        "Th\xF4ng tin \u0111\u01A1n h\xE0ng"
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "summary-session-content" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "checkout-summary" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "checkout-summary-rows" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "checkout-summary-row" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-summary-label" },
+                                        "T\u1EA1m t\xEDnh  (2 S\u1EA3n ph\u1EA9m)"
+                                    ),
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-summary-value" },
+                                        "338.000 \u20AB"
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "checkout-summary-row" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-summary-label" },
+                                        "Ph\xED giao h\xE0ng "
+                                    ),
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-summary-value" },
+                                        "MI\u1EC4N PH\xCD"
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: " checkout-order-total" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "checkout-order-total-row" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-order-total-title" },
+                                        "T\u1ED5ng c\u1ED9ng"
+                                    ),
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-order-total-fee" },
+                                        "338.000 \u20AB",
+                                        _react2.default.createElement(
+                                            "small",
+                                            { className: "checkout-order-total-fee-tip" },
+                                            "\u0110\xE3 bao g\u1ED3m VAT (n\u1EBFu c\xF3)"
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return VertifyPayment;
+}(_react.Component);
+
+exports.default = VertifyPayment;
 
 /***/ }),
 /* 583 */
@@ -41263,15 +41387,38 @@ module.exports = store;
 
 var _redux = __webpack_require__(97);
 
-var _cartReducer = __webpack_require__(584);
+var _reducers = __webpack_require__(584);
+
+var _reducers2 = _interopRequireDefault(_reducers);
+
+var _reduxThunk = __webpack_require__(588);
+
+var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/** Show redux with redux devtools*/
+var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+module.exports = store;
+
+/***/ }),
+/* 584 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _redux = __webpack_require__(97);
+
+var _cartReducer = __webpack_require__(585);
 
 var _cartReducer2 = _interopRequireDefault(_cartReducer);
 
-var _productsReducer = __webpack_require__(585);
+var _productsReducer = __webpack_require__(586);
 
 var _productsReducer2 = _interopRequireDefault(_productsReducer);
 
-var _showModalReducer = __webpack_require__(586);
+var _showModalReducer = __webpack_require__(587);
 
 var _showModalReducer2 = _interopRequireDefault(_showModalReducer);
 
@@ -41281,7 +41428,7 @@ var reducers = (0, _redux.combineReducers)({ cart: _cartReducer2.default, produc
 module.exports = reducers;
 
 /***/ }),
-/* 584 */
+/* 585 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41312,7 +41459,7 @@ function cart() {
 }
 
 /***/ }),
-/* 585 */
+/* 586 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41340,7 +41487,7 @@ var products = function products() {
 module.exports = products;
 
 /***/ }),
-/* 586 */
+/* 587 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41367,7 +41514,7 @@ var showModal = function showModal() {
 module.exports = showModal;
 
 /***/ }),
-/* 587 */
+/* 588 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41394,7 +41541,6 @@ thunk.withExtraArgument = createThunkMiddleware;
 /* harmony default export */ __webpack_exports__["default"] = (thunk);
 
 /***/ }),
-/* 588 */,
 /* 589 */,
 /* 590 */,
 /* 591 */,
@@ -41598,7 +41744,8 @@ thunk.withExtraArgument = createThunkMiddleware;
 /* 789 */,
 /* 790 */,
 /* 791 */,
-/* 792 */
+/* 792 */,
+/* 793 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41622,142 +41769,337 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var VertifyPayment = function (_Component) {
-    _inherits(VertifyPayment, _Component);
+var Cart = function (_Component) {
+    _inherits(Cart, _Component);
 
-    function VertifyPayment() {
-        _classCallCheck(this, VertifyPayment);
+    function Cart(props) {
+        _classCallCheck(this, Cart);
 
-        return _possibleConstructorReturn(this, (VertifyPayment.__proto__ || Object.getPrototypeOf(VertifyPayment)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Cart.__proto__ || Object.getPrototypeOf(Cart)).call(this, props));
+
+        _this.state = {};
+        _this.onClick = _this.onClick.bind(_this);
+        return _this;
     }
 
-    _createClass(VertifyPayment, [{
+    _createClass(Cart, [{
+        key: "onClick",
+        value: function onClick() {}
+    }, {
         key: "render",
         value: function render() {
             return _react2.default.createElement(
                 "div",
-                { className: "payment" },
+                { className: "topcart" },
                 _react2.default.createElement(
-                    "div",
-                    { className: "btn-payment" },
-                    _react2.default.createElement(
-                        "button",
-                        { className: "btn-checkout" },
-                        "TI\u1EBEN H\xC0NH THANH TO\xC1N"
-                    )
+                    "span",
+                    null,
+                    _react2.default.createElement("i", { className: "fa fa-shopping-cart" })
                 ),
                 _react2.default.createElement(
                     "div",
-                    { className: "checkout-address" },
+                    { className: "cart-info" },
                     _react2.default.createElement(
-                        "div",
-                        { className: "address-heading" },
+                        "small",
+                        null,
+                        "\u0110\xE3 ch\u1ECDn ",
                         _react2.default.createElement(
-                            "p",
-                            { className: "address-hat" },
-                            "Thanh to\xE1n v\u1EADn chuy\u1EC3n"
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "address-title-container" },
+                            "em",
+                            { className: "highlight" },
                             _react2.default.createElement(
                                 "span",
-                                { className: "address-title" },
-                                "Giao h\xE0ng t\u1EDBi"
+                                { className: "cartTopRightQuantity" },
+                                "0"
                             ),
+                            " S\u1EA3n ph\u1EA9m"
+                        ),
+                        " trong gi\u1ECF h\xE0ng"
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "cart-top-content" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "ci-item" },
+                            _react2.default.createElement("img", { src: "images/slick/ao-khoac-kaki-den-ak185-3573-p.jpg", style: { width: "80" }, alt: "\xC1o Kho\xE1c Kaki \u0110en AK185" }),
                             _react2.default.createElement(
-                                "a",
-                                { href: "#", className: "address-edit" },
-                                "CH\u1EC8NH S\u1EECA"
+                                "div",
+                                { className: "ci-item-info" },
+                                _react2.default.createElement(
+                                    "h5",
+                                    null,
+                                    _react2.default.createElement(
+                                        "a",
+                                        { href: "images/slick/ao-khoac-kaki-den-ak185-3573.html" },
+                                        "\xC1o Kho\xE1c Kaki \u0110en AK185"
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "p",
+                                    null,
+                                    "1 x 385.000"
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "ci-edit" },
+                                    _react2.default.createElement("a", { href: "#", cart: "33645", onClick: this.onClick, className: "edit fa fa-trash-o" })
+                                )
                             )
                         )
                     ),
                     _react2.default.createElement(
                         "div",
-                        { className: "address-info" },
-                        _react2.default.createElement(
-                            "div",
-                            { className: "address-name" },
-                            "Nguy\u1EC5n \u0110\u1EE9c Long"
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "address-info-item address-info-value" },
-                            "Thanh Oai H\xE0 N\u1ED9i"
-                        ),
-                        _react2.default.createElement(
-                            "div",
-                            { className: "address-info-item address-info-phone" },
-                            "0915834454"
-                        )
-                    )
-                ),
-                _react2.default.createElement(
-                    "div",
-                    { className: "summary-session" },
-                    _react2.default.createElement(
-                        "div",
-                        { className: "summary-session-heading" },
-                        "Th\xF4ng tin \u0111\u01A1n h\xE0ng"
+                        { className: "ci-total" },
+                        "T\u1ED5ng: 0"
                     ),
                     _react2.default.createElement(
                         "div",
-                        { className: "summary-session-content" },
+                        { className: "cart-btn" },
+                        _react2.default.createElement(
+                            "a",
+                            { href: "#", title: "thanh toan", className: "myBtn-Primary" },
+                            "G\u1EEDi \u0111\u01A1n h\xE0ng"
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Cart;
+}(_react.Component);
+
+exports.default = Cart;
+
+/***/ }),
+/* 794 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Login = function (_Component) {
+    _inherits(Login, _Component);
+
+    function Login() {
+        _classCallCheck(this, Login);
+
+        return _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).apply(this, arguments));
+    }
+
+    _createClass(Login, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "login" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "container" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "login-title" },
+                        _react2.default.createElement(
+                            "h3",
+                            null,
+                            "Ch\xE0o m\u1EEBng \u0111\u1EBFn v\u1EDBi Wingshoes. \u0110\u0103ng nh\u1EADp ngay!"
+                        ),
                         _react2.default.createElement(
                             "div",
-                            { className: "checkout-summary" },
+                            { className: "login-other" },
+                            _react2.default.createElement(
+                                "span",
+                                null,
+                                "Th\xE0nh vi\xEAn m\u1EDBi? ",
+                                _react2.default.createElement(
+                                    "a",
+                                    { href: "#" },
+                                    "\u0110\u0103ng k\xED"
+                                ),
+                                " t\u1EA1i \u0111\xE2y"
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "mod-login" },
+                        _react2.default.createElement(
+                            "form",
+                            null,
                             _react2.default.createElement(
                                 "div",
-                                { className: "checkout-summary-rows" },
+                                { className: "form-login" },
                                 _react2.default.createElement(
                                     "div",
-                                    { className: "checkout-summary-row" },
+                                    { className: "mod-input mod-email" },
                                     _react2.default.createElement(
-                                        "div",
-                                        { className: "checkout-summary-label" },
-                                        "T\u1EA1m t\xEDnh  (2 S\u1EA3n ph\u1EA9m)"
+                                        "label",
+                                        null,
+                                        "\u0110\u1ECBa ch\u1EC9 email"
                                     ),
-                                    _react2.default.createElement(
-                                        "div",
-                                        { className: "checkout-summary-value" },
-                                        "338.000 \u20AB"
-                                    )
+                                    _react2.default.createElement("input", { type: "text", placeholder: "Vui l\xF2ng nh\u1EADp email c\u1EE7a b\u1EA1n", autoComplete: "username" })
                                 ),
                                 _react2.default.createElement(
                                     "div",
-                                    { className: "checkout-summary-row" },
+                                    { className: "mod-input mod-password" },
                                     _react2.default.createElement(
-                                        "div",
-                                        { className: "checkout-summary-label" },
-                                        "Ph\xED giao h\xE0ng "
+                                        "label",
+                                        null,
+                                        "M\u1EADt kh\u1EA9u"
                                     ),
+                                    _react2.default.createElement("input", { type: "password", placeholder: "Vui l\xF2ng nh\u1EADp m\u1EADt kh\u1EA9u c\u1EE7a b\u1EA1n", autoComplete: "password" })
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "mod-login-forgot" },
                                     _react2.default.createElement(
-                                        "div",
-                                        { className: "checkout-summary-value" },
-                                        "MI\u1EC4N PH\xCD"
+                                        "a",
+                                        { href: "#" },
+                                        "Qu\xEAn m\u1EADt kh\u1EA9u?"
                                     )
                                 )
                             ),
                             _react2.default.createElement(
                                 "div",
-                                { className: " checkout-order-total" },
+                                { className: "mod-login-btn" },
+                                _react2.default.createElement(
+                                    "button",
+                                    { type: "submit", className: "btn-login" },
+                                    "\u0110\u0102NG NH\u1EACP"
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Login;
+}(_react.Component);
+
+exports.default = Login;
+
+/***/ }),
+/* 795 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ForgotPassword = function (_Component) {
+    _inherits(ForgotPassword, _Component);
+
+    function ForgotPassword() {
+        _classCallCheck(this, ForgotPassword);
+
+        return _possibleConstructorReturn(this, (ForgotPassword.__proto__ || Object.getPrototypeOf(ForgotPassword)).apply(this, arguments));
+    }
+
+    _createClass(ForgotPassword, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "forgot-password" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "container" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "mod-layout" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "mod-layout-title" },
+                            _react2.default.createElement(
+                                "h2",
+                                null,
+                                "Qu\xEAn m\u1EADt kh\u1EA9u?"
+                            )
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "mod-layout-main" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "mod-layout-subtitle" },
+                                _react2.default.createElement(
+                                    "h3",
+                                    null,
+                                    "Nh\u1EADp \u0111\u1ECBa ch\u1EC9 email c\u1EE7a b\u1EA1n d\u01B0\u1EDBi \u0111\xE2y v\xE0 ch\xFAng t\xF4i s\u1EBD g\u1EEDi cho b\u1EA1n m\u1ED9t li\xEAn k\u1EBFt \u0111\u1EC3 \u0111\u1EB7t l\u1EA1i m\u1EADt kh\u1EA9u c\u1EE7a b\u1EA1n."
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: "forgot" },
                                 _react2.default.createElement(
                                     "div",
-                                    { className: "checkout-order-total-row" },
+                                    { className: "forgot-form" },
                                     _react2.default.createElement(
                                         "div",
-                                        { className: "checkout-order-total-title" },
-                                        "T\u1ED5ng c\u1ED9ng"
-                                    ),
-                                    _react2.default.createElement(
-                                        "div",
-                                        { className: "checkout-order-total-fee" },
-                                        "338.000 \u20AB",
+                                        { className: "mod-input mod-input-email" },
                                         _react2.default.createElement(
-                                            "small",
-                                            { className: "checkout-order-total-fee-tip" },
-                                            "\u0110\xE3 bao g\u1ED3m VAT (n\u1EBFu c\xF3)"
-                                        )
+                                            "label",
+                                            null,
+                                            "\u0110\u1ECBa ch\u1EC9 email"
+                                        ),
+                                        _react2.default.createElement("input", { type: "text", placeholder: "Vui l\xF2ng nh\u1EADp email c\u1EE7a b\u1EA1n", value: "", autoComplete: "username" })
+                                    )
+                                ),
+                                _react2.default.createElement("div", { className: "space20" }),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "forgot-action" },
+                                    _react2.default.createElement(
+                                        "button",
+                                        { type: "button", className: "forgot-password-btn" },
+                                        "G\u1EECI"
+                                    )
+                                ),
+                                _react2.default.createElement("div", { className: "space10" }),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "forgot-ft" },
+                                    _react2.default.createElement(
+                                        "a",
+                                        { href: "#" },
+                                        "Quay l\u1EA1i"
                                     )
                                 )
                             )
@@ -41768,10 +42110,148 @@ var VertifyPayment = function (_Component) {
         }
     }]);
 
-    return VertifyPayment;
+    return ForgotPassword;
 }(_react.Component);
 
-exports.default = VertifyPayment;
+exports.default = ForgotPassword;
+
+/***/ }),
+/* 796 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Register = function (_Component) {
+    _inherits(Register, _Component);
+
+    function Register() {
+        _classCallCheck(this, Register);
+
+        return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).apply(this, arguments));
+    }
+
+    _createClass(Register, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "login register" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "container" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "login-title" },
+                        _react2.default.createElement(
+                            "h3",
+                            null,
+                            "T\u1EA1o t\xE0i kho\u1EA3n Wingshoes"
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "login-other" },
+                            _react2.default.createElement(
+                                "span",
+                                null,
+                                "B\u1EA1n \u0111\xE3 l\xE0 th\xE0nh vi\xEAn?  ",
+                                _react2.default.createElement(
+                                    "a",
+                                    { href: "#" },
+                                    "\u0110\u0103ng nh\u1EADp"
+                                ),
+                                " t\u1EA1i \u0111\xE2y"
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "form-login" },
+                        _react2.default.createElement(
+                            "form",
+                            null,
+                            _react2.default.createElement(
+                                "div",
+                                { className: "mod-login" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "mod-input mod-email" },
+                                    _react2.default.createElement(
+                                        "label",
+                                        null,
+                                        "\u0110\u1ECBa ch\u1EC9 email"
+                                    ),
+                                    _react2.default.createElement("input", { type: "text", placeholder: "Vui l\xF2ng nh\u1EADp email c\u1EE7a b\u1EA1n", autoComplete: "username" })
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "mod-input mod-password" },
+                                    _react2.default.createElement(
+                                        "label",
+                                        null,
+                                        "M\u1EADt kh\u1EA9u"
+                                    ),
+                                    _react2.default.createElement("input", { type: "password", placeholder: "T\u1ED1i thi\u1EC3u 6 k\xED t\u1EF1 bao g\u1ED3m c\u1EA3 ch\u1EEF v\xE0 s\u1ED1", autoComplete: "password" })
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "mod-input mod-repassword" },
+                                    _react2.default.createElement(
+                                        "label",
+                                        null,
+                                        "Nh\u1EADp l\u1EA1i m\u1EADt kh\u1EA9u"
+                                    ),
+                                    _react2.default.createElement("input", { type: "password", placeholder: "Vui l\xF2ng nh\u1EADp l\u1EA1i m\u1EADt kh\u1EA9u", autoComplete: "repassword" })
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "mod-input mod-name" },
+                                    _react2.default.createElement(
+                                        "label",
+                                        null,
+                                        "T\xEAn"
+                                    ),
+                                    _react2.default.createElement("input", { type: "text", placeholder: "H\u1ECD t\xEAn" })
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "mod-login-btn" },
+                                    _react2.default.createElement(
+                                        "button",
+                                        { type: "submit", className: "btn-login" },
+                                        "\u0110\u0102NG K\xDD"
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Register;
+}(_react.Component);
+
+exports.default = Register;
 
 /***/ })
 ],[299]);

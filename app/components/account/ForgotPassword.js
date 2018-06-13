@@ -13,19 +13,19 @@ class ForgotPassword extends Component {
                             <div className="mod-layout-subtitle">
                                 <h3>Nhập địa chỉ email của bạn dưới đây và chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu của bạn.</h3>
                             </div>
-                            <div class="forgot">
-                                <div class="forgot-form">
-                                    <div class="mod-input mod-input-email">
+                            <div className="forgot">
+                                <div className="forgot-form">
+                                    <div className="mod-input mod-input-email">
                                         <label>Địa chỉ email</label>
-                                        <input type="text" placeholder="Vui lòng nhập email của bạn" value="" />
+                                        <input type="text" placeholder="Vui lòng nhập email của bạn" value="" autoComplete="username"/>
                                     </div>
                                 </div>
                                 <div className="space20"></div>
-                                <div class="forgot-action">
-                                    <button type="button" class="forgot-password-btn">GỬI</button>
+                                <div className="forgot-action">
+                                    <button type="button" className="forgot-password-btn">GỬI</button>
                                 </div>
                                 <div className="space10"></div>
-                                <div class="forgot-ft">
+                                <div className="forgot-ft">
                                     <a href="#">Quay lại</a>
                                 </div>
                             </div>
