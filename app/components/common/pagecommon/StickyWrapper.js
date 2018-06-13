@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import Cart from 'app/components/cart/Cart'
 export default class StickyWrapper extends Component {
     
     render() {
@@ -12,15 +12,7 @@ export default class StickyWrapper extends Component {
                                 <a className="navbar-brand" href="/" title="thoi trang nam"><img src="logo.png" className="img-responsive" alt="thoi trang nam" /></a>
                             </div>
                             <div className="header-xtra pull-right">
-                                <div className="topcart"> <span><i className="fa fa-shopping-cart"></i></span>
-                                    <div className="cart-info"> <small>Đã chọn <em className="highlight"><span className="cartTopRightQuantity">0</span> Sản phẩm</em> trong giỏ hàng</small>
-                                        <div className="cartTopRightContent"></div>
-                                        <div className="ci-total cartTopRightTotal" style={{ display: "none" }}>Tổng: 0</div>
-                                        <div className="cart-btn cartTopRightButtons" style={{ display: "none" }}>
-                                            <a href="/thanh-toan/step-1.html" title="thanh toan" className="myBtn-Primary">Gửi đơn hàng</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <Cart />
                                 <div className="topsearch"> <span> <i className="fa fa-search"></i> </span>
                                     <form id="searchbox" className="searchtop" action="/tim-kiem.html" method="post">
                                         <input className="search_query form-control" type="text" id="search_query_top" name="text" placeholder="Tìm kiếm" value="" />

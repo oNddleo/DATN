@@ -6,6 +6,8 @@ import HomePage from 'app/components/homepage/HomePage'
 import ShopContent from 'app/components/shop/ShopContent'
 import $ from 'jquery'
 import VertifyOrder from './vertifyOrder/VertifyOrder';
+import Login from 'app/components/account/Login'
+import ForgotPassword from './account/ForgotPassword';
 export default class Layout extends Component {
   componentDidMount(){
     var header = $(".sticky-wrapper");
@@ -31,9 +33,12 @@ export default class Layout extends Component {
         </div>
           {/* <HomePage /> */}
           {/* <ShopContent url={'images/bannerShop/quan-kaki-nam-banner.jpg'}/> */}
-          <VertifyOrder />
+          {/* <VertifyOrder /> */}
+          <Login />
+          {/* <ForgotPassword /> */}
         <div className="footer">
           <Footer />
+          
         </div>
         <div id="backtotop" className="active"><i className="fa fa-chevron-up"></i></div>
       </div>
