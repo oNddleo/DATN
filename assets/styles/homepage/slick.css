@@ -303,6 +303,7 @@ a, a:hover {
     transition: .4s;
     text-align: center;
     z-index: 222;
+    outline: none;
 }
 .slick-prev:after {
     content: "\f053";

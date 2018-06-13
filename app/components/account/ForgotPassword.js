@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 class ForgotPassword extends Component {
     render() {
         return (
@@ -26,7 +26,7 @@ class ForgotPassword extends Component {
                                 </div>
                                 <div className="space10"></div>
                                 <div className="forgot-ft">
-                                    <a href="#">Quay lại</a>
+                                    <Link to={"/login"}>Quay lại</Link>
                                 </div>
                             </div>
                         </div>

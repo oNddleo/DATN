@@ -16,7 +16,7 @@
     right: 0;
     margin: 0 auto;
     font-weight: 300;
-    z-index: 999;
+    z-index: 1;
 }
 .heading-sub h5 {
     font-family: Raleway,Lato,sans-serif;
@@ -86,7 +86,7 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
-    -webkit-transition-duration: .5s;
+    /* -webkit-transition-duration: .5s; */
     visibility: hidden;
     transition: .4s;
 }
@@ -145,7 +145,7 @@ h4 {
     display: block;
     width: 100%;
     margin-top: 30%;
-    vertical-align: middle;
+    /* vertical-align: middle; */
     cursor: pointer;
     z-index: 111;
 }
