@@ -132,9 +132,11 @@ header {
     font-size: 13px;
     text-transform: none;
     margin-left: -25px;
+    color: #fff;
 }
 .nav-badge:hover {
-    color: #FFF;
+    color: #bd0103;
+    background: #fff;
 }
 .nav-badge:after {
     border-color: #bd0103 transparent;
