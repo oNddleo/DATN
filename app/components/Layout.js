@@ -3,6 +3,7 @@ import Menu from 'app/components/common/pagecommon/Menu'
 import Footer from 'app/components/common/pagecommon/Footer'
 import StickyWrapper from 'app/components/common/pagecommon/StickyWrapper'
 import HomePage from 'app/components/homepage/HomePage'
+import ShopContent from 'app/components/shop/ShopContent'
 import $ from 'jquery'
 export default class Layout extends Component {
   componentDidMount(){
@@ -27,7 +28,8 @@ export default class Layout extends Component {
         <div className="sticky-wrapper" style={{ height: "85px" }}>
           <StickyWrapper />
         </div>
-          <HomePage />
+          {/* <HomePage /> */}
+          <ShopContent url={'images/bannerShop/quan-kaki-nam-banner.jpg'}/>
         <div className="footer">
           <Footer />
         </div>

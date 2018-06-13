@@ -19,7 +19,7 @@ class ModalCard extends Component {
         let { showModal } = this.props;
         // console.log('...modal props', this.props)
         return (
-            <Modal show={showModal} bsSize="lg" dialogClassName="modal-product">
+            <Modal show={showModal} bsSize="lg" dialogClassName="modal-product" onHide={this.closeModal}>
                 <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.closeModal}><i className="fa fa-times"></i></button>
                 <div className="row">
                     <div className="col-md-5 col-sm-6" >

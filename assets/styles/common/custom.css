@@ -32,7 +32,9 @@ body{
 .space10 {
     margin-bottom: 10px!important;
 }
-
+.space50 {
+    margin-bottom: 50px!important;
+}
 .myBtn {
     border: none;
     border-bottom: 2px solid #ccc;

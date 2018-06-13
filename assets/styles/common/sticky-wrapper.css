@@ -189,9 +189,9 @@ header {
     -moz-box-shadow: 0 -1px 2px rgba(0,0,0,.06);
     box-shadow: 0 -1px 2px rgba(0,0,0,.06);
 }
-.navbar-nav>li>.dropdown-menu {
-    margin-top: 10px;
-}
+/* .navbar-nav>li>.dropdown-menu {
+    margin-top: 5px;
+} */
 .mega-menu li {
     width: 33.33333%;
     float: left;
@@ -220,9 +220,9 @@ header {
 }
 .nav li:hover ul.mega-menu{
     display: -webkit-box;
-    margin-top: 10px;
     border: 1px solid #ddd;
     opacity: 1;
+    transition: 4ms
 }
 .mega-menu li div a {
     width: 100%;

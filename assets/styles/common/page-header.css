@@ -1,0 +1,43 @@
+.page_header_info {
+    height: 360px;
+    width: 470px;
+    border: 4px solid #fff;
+    margin-top: 45px;
+    float: right;
+    padding: 0 50px;
+    display: table;
+}
+.page_header {
+    height: 447px;
+}
+.page_header_info_inner {
+    display: table-cell;
+    vertical-align: middle;
+    top: -4px;
+    position: relative;
+}
+.page_header_info h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 30px;
+    position: relative;
+    font-family: Raleway,Lato,sans-serif;
+    text-transform: uppercase;
+}
+.page_header_info h2:after {
+    content: "";
+    width: 230px;
+    height: 2px;
+    background: #FFF;
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.page_header_info p {
+    font-size: 14px;
+    color: #fff;
+    margin: 0 0 30px;
+}

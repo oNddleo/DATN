@@ -1,0 +1,39 @@
+.filter-wrap {
+    border-bottom: 1px dashed #CCC;
+    padding-bottom: 10px;
+}
+.filter-wrap h1 {
+    float: left;
+    font-size: 30px;
+    font-family: Montserrat,Raleway,Lato,sans-serif;
+    font-weight: 700;
+}
+.filter-wrap select {
+    height: 30px;
+    border: 1px solid #fff;
+    padding: 0 10px;
+    width: 110px;
+}
+.filter-wrap select option {
+    margin: 40px;
+    background: #ededed;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.filter-wrap .filter-more .show {
+    padding-top: 25px;
+}
+
+.filter-wrap .col-md-4, .filter-wrap .col-md-5 {
+    line-height: 24px;
+}
+.filter-wrap .filter-more .show a.active {
+    color: #444;
+}
+
+.filter-wrap .filter-more .show a {
+    height: 30px;
+    font-size: 22px;
+    margin: 5px;
+}

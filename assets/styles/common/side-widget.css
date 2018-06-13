@@ -1,0 +1,62 @@
+.side-widget h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 22px;
+    font-family: Raleway,Lato,sans-serif;
+    text-transform: uppercase;
+}
+.side-widget h3 span {
+    background: #fff;
+    padding-right: 15px;
+    position: relative;
+    z-index: 88;
+    margin: 0 0 20px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #c80204;
+}
+.search-widget {
+    position: relative;
+}
+.search-widget input {
+    border: 1px solid #ddd;
+    width: 100%;
+    height: 35px;
+    border-radius: 0;
+}
+.form-control {
+    font-size: 15px;
+}
+.search-widget button {
+    border: none;
+    background: 0 0;
+    color: #888;
+    font-size: 13px;
+    height: 35px;
+    line-height: 33px;
+    position: absolute;
+    right: -4px;
+    top: 0;
+    width: 50px;
+}
+.side-widget h3:after {
+    content: "";
+    background: #ccc;
+    height: 1px;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    width: 100%;
+}
+.related-posts h5 {
+    margin-bottom: 10px;
+    font-family: Raleway,Lato,sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 30px;
+}

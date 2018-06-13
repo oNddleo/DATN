@@ -1,0 +1,8 @@
+.pagination>li>a, .pagination>li>span {
+    color: #000;
+}
+.pagination>li.selected>a{
+    color: #fff;
+    background: #c80204;
+    border: 1px solid #860102;
+}

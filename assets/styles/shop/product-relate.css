@@ -1,0 +1,25 @@
+.related-posts {
+    border-top: 1px solid #CCC;
+    padding-top: 17px;
+    padding-bottom: 22px;
+    display: table;
+    width: 100%;
+}
+.related-posts h5 {
+    margin-bottom: 10px;
+}
+.related-posts h5 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 30px;
+}
+.related-posts-node img {
+    border: 1px solid #efefef;
+    padding: 3px;
+}
+.related-posts-node {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    clear: both;
+}
