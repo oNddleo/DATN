@@ -136,7 +136,10 @@ header {
 }
 .nav-badge:hover {
     color: #bd0103;
-    background: #fff;
+    background: #f4f4f4;
+}
+.nav-badge:hover::after{
+    border-color: #f4f4f4;
 }
 .nav-badge:after {
     border-color: #bd0103 transparent;

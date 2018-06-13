@@ -5,6 +5,7 @@ import StickyWrapper from 'app/components/common/pagecommon/StickyWrapper'
 import HomePage from 'app/components/homepage/HomePage'
 import ShopContent from 'app/components/shop/ShopContent'
 import $ from 'jquery'
+import VertifyOrder from './vertifyOrder/VertifyOrder';
 export default class Layout extends Component {
   componentDidMount(){
     var header = $(".sticky-wrapper");
@@ -29,7 +30,8 @@ export default class Layout extends Component {
           <StickyWrapper />
         </div>
           {/* <HomePage /> */}
-          <ShopContent url={'images/bannerShop/quan-kaki-nam-banner.jpg'}/>
+          {/* <ShopContent url={'images/bannerShop/quan-kaki-nam-banner.jpg'}/> */}
+          <VertifyOrder />
         <div className="footer">
           <Footer />
         </div>

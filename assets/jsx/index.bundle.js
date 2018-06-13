@@ -9222,7 +9222,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // import Product from './Product/Product';
 
 
-var store = __webpack_require__(580);
+var store = __webpack_require__(582);
 
 var App = function (_Component) {
     _inherits(App, _Component);
@@ -9347,6 +9347,10 @@ var _jquery = __webpack_require__(579);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
+var _VertifyOrder = __webpack_require__(580);
+
+var _VertifyOrder2 = _interopRequireDefault(_VertifyOrder);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -9393,7 +9397,7 @@ var Layout = function (_Component) {
           { className: 'sticky-wrapper', style: { height: "85px" } },
           _react2.default.createElement(_StickyWrapper2.default, null)
         ),
-        _react2.default.createElement(_ShopContent2.default, { url: 'images/bannerShop/quan-kaki-nam-banner.jpg' }),
+        _react2.default.createElement(_VertifyOrder2.default, null),
         _react2.default.createElement(
           'div',
           { className: 'footer' },
@@ -26027,7 +26031,7 @@ var _FilterWrap = __webpack_require__(564);
 
 var _FilterWrap2 = _interopRequireDefault(_FilterWrap);
 
-var _ProductItemPage = __webpack_require__(792);
+var _ProductItemPage = __webpack_require__(568);
 
 var _ProductItemPage2 = _interopRequireDefault(_ProductItemPage);
 
@@ -26035,7 +26039,7 @@ var _PaginationWrap = __webpack_require__(569);
 
 var _PaginationWrap2 = _interopRequireDefault(_PaginationWrap);
 
-var _ProductWidget = __webpack_require__(791);
+var _ProductWidget = __webpack_require__(577);
 
 var _ProductWidget2 = _interopRequireDefault(_ProductWidget);
 
@@ -29263,7 +29267,92 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 568 */,
+/* 568 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _CustomCard = __webpack_require__(217);
+
+var _CustomCard2 = _interopRequireDefault(_CustomCard);
+
+var _ModalCard = __webpack_require__(218);
+
+var _ModalCard2 = _interopRequireDefault(_ModalCard);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProductItemPage = function (_Component) {
+    _inherits(ProductItemPage, _Component);
+
+    function ProductItemPage(props) {
+        _classCallCheck(this, ProductItemPage);
+
+        var _this = _possibleConstructorReturn(this, (ProductItemPage.__proto__ || Object.getPrototypeOf(ProductItemPage)).call(this, props));
+
+        _this.state = {};
+        _this.showModal = _this.showModal.bind(_this);
+        _this.closeModal = _this.closeModal.bind(_this);
+        return _this;
+    }
+
+    _createClass(ProductItemPage, [{
+        key: 'showModal',
+        value: function showModal() {
+            // console.log("show modal")
+            this.setState({ showModal: true });
+        }
+    }, {
+        key: 'closeModal',
+        value: function closeModal() {
+            this.setState({ showModal: false });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var arr = [1, 2, 3, 4, 5, 6, 7];
+            var src = this.props.src;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'row', id: 'product-items' },
+                arr.map(function (index) {
+                    return _react2.default.createElement(
+                        'div',
+                        { className: 'product-item col-md-4 col-sm-6', key: index },
+                        _react2.default.createElement(_CustomCard2.default, { key: index, src: 'images/' + src + '/ao-thun-co-co-den-at777-9199-p.png', showModal: _this2.showModal })
+                    );
+                }),
+                _react2.default.createElement(_ModalCard2.default, { closeModal: this.closeModal, showModal: this.state.showModal })
+            );
+        }
+    }]);
+
+    return ProductItemPage;
+}(_react.Component);
+
+exports.default = ProductItemPage;
+
+/***/ }),
 /* 569 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30403,7 +30492,75 @@ exports.default = BreakView;
 //# sourceMappingURL=BreakView.js.map
 
 /***/ }),
-/* 577 */,
+/* 577 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ProductItemRelate = __webpack_require__(578);
+
+var _ProductItemRelate2 = _interopRequireDefault(_ProductItemRelate);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProductWidget = function (_Component) {
+    _inherits(ProductWidget, _Component);
+
+    function ProductWidget() {
+        _classCallCheck(this, ProductWidget);
+
+        return _possibleConstructorReturn(this, (ProductWidget.__proto__ || Object.getPrototypeOf(ProductWidget)).apply(this, arguments));
+    }
+
+    _createClass(ProductWidget, [{
+        key: 'render',
+        value: function render() {
+            var title = this.props.title;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'row' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'col-md-12 col-sm-12' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'related-posts' },
+                        _react2.default.createElement(
+                            'h5',
+                            null,
+                            title
+                        ),
+                        _react2.default.createElement(_ProductItemRelate2.default, null)
+                    )
+                )
+            );
+        }
+    }]);
+
+    return ProductWidget;
+}(_react.Component);
+
+exports.default = ProductWidget;
+
+/***/ }),
 /* 578 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40848,13 +41005,246 @@ return jQuery;
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _VertifyItem = __webpack_require__(581);
+
+var _VertifyItem2 = _interopRequireDefault(_VertifyItem);
+
+var _VertifyPayment = __webpack_require__(792);
+
+var _VertifyPayment2 = _interopRequireDefault(_VertifyPayment);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var VertifyOrder = function (_Component) {
+    _inherits(VertifyOrder, _Component);
+
+    function VertifyOrder() {
+        _classCallCheck(this, VertifyOrder);
+
+        return _possibleConstructorReturn(this, (VertifyOrder.__proto__ || Object.getPrototypeOf(VertifyOrder)).apply(this, arguments));
+    }
+
+    _createClass(VertifyOrder, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'shop-container vertify-order' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'container' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'row' },
+                        _react2.default.createElement('div', { className: 'space20' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-8 col-sm-6' },
+                            _react2.default.createElement(
+                                'div',
+                                { id: 'listHeader', className: 'list-header' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-8 list-header-left' },
+                                    '3 s\u1EA3n ph\u1EA9m'
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-2 list-header-middle' },
+                                    'GI\xC1'
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-2 list-header-right' },
+                                    'S\u1ED0 L\u01AF\u1EE2NG'
+                                )
+                            ),
+                            _react2.default.createElement(_VertifyItem2.default, null)
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-4 col-sm-6' },
+                            _react2.default.createElement(_VertifyPayment2.default, null)
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return VertifyOrder;
+}(_react.Component);
+
+exports.default = VertifyOrder;
+
+/***/ }),
+/* 581 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var VertifyItem = function (_Component) {
+    _inherits(VertifyItem, _Component);
+
+    function VertifyItem() {
+        _classCallCheck(this, VertifyItem);
+
+        return _possibleConstructorReturn(this, (VertifyItem.__proto__ || Object.getPrototypeOf(VertifyItem)).apply(this, arguments));
+    }
+
+    _createClass(VertifyItem, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "package" },
+                _react2.default.createElement(
+                    "div",
+                    { style: { paddingLeft: "10px", paddingRight: "10px" } },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "cart-item" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "cart-item-inner" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "col-md-8 cart-item-left" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "img-wrap" },
+                                    _react2.default.createElement(
+                                        "a",
+                                        { href: "", id: "", className: "automation-link-from-image-to-prod" },
+                                        _react2.default.createElement("img", { className: "img", src: "images/slick/ao-khoac-jean-den-ak196-5318-p.jpg", alt: "item" })
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "content" },
+                                    _react2.default.createElement(
+                                        "a",
+                                        { id: "", href: "", className: "title" },
+                                        "\xC1o kho\xE1c jean \u0111en AK196"
+                                    ),
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "operations" },
+                                        _react2.default.createElement(
+                                            "span",
+                                            null,
+                                            _react2.default.createElement("i", { className: "fa fa-trash-o" })
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: "col-md-2 cart-item-middle" },
+                                _react2.default.createElement(
+                                    "p",
+                                    { className: "current-price" },
+                                    "10.500 \u20AB"
+                                ),
+                                _react2.default.createElement(
+                                    "p",
+                                    { className: "origin-price" },
+                                    "20.000 \u20AB"
+                                ),
+                                _react2.default.createElement(
+                                    "p",
+                                    { className: "promotion-ratio" },
+                                    "-48%"
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: "col-md-2 cart-item-right" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "minus-quantity item" },
+                                    _react2.default.createElement(
+                                        "span",
+                                        null,
+                                        _react2.default.createElement("i", { className: "fa fa-minus" })
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "quantity item" },
+                                    _react2.default.createElement("input", { className: "item-quantity", defaultValue: "1" })
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "plus-quantity item" },
+                                    _react2.default.createElement(
+                                        "span",
+                                        null,
+                                        _react2.default.createElement("i", { className: "fa fa-plus" })
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return VertifyItem;
+}(_react.Component);
+
+exports.default = VertifyItem;
+
+/***/ }),
+/* 582 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _redux = __webpack_require__(97);
 
-var _reducers = __webpack_require__(581);
+var _reducers = __webpack_require__(583);
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
-var _reduxThunk = __webpack_require__(585);
+var _reduxThunk = __webpack_require__(587);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -40865,7 +41255,7 @@ var store = (0, _redux.createStore)(_reducers2.default, (0, _redux.compose)((0, 
 module.exports = store;
 
 /***/ }),
-/* 581 */
+/* 583 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40873,15 +41263,15 @@ module.exports = store;
 
 var _redux = __webpack_require__(97);
 
-var _cartReducer = __webpack_require__(582);
+var _cartReducer = __webpack_require__(584);
 
 var _cartReducer2 = _interopRequireDefault(_cartReducer);
 
-var _productsReducer = __webpack_require__(583);
+var _productsReducer = __webpack_require__(585);
 
 var _productsReducer2 = _interopRequireDefault(_productsReducer);
 
-var _showModalReducer = __webpack_require__(584);
+var _showModalReducer = __webpack_require__(586);
 
 var _showModalReducer2 = _interopRequireDefault(_showModalReducer);
 
@@ -40891,7 +41281,7 @@ var reducers = (0, _redux.combineReducers)({ cart: _cartReducer2.default, produc
 module.exports = reducers;
 
 /***/ }),
-/* 582 */
+/* 584 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40922,7 +41312,7 @@ function cart() {
 }
 
 /***/ }),
-/* 583 */
+/* 585 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40950,7 +41340,7 @@ var products = function products() {
 module.exports = products;
 
 /***/ }),
-/* 584 */
+/* 586 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40977,7 +41367,7 @@ var showModal = function showModal() {
 module.exports = showModal;
 
 /***/ }),
-/* 585 */
+/* 587 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -41004,8 +41394,6 @@ thunk.withExtraArgument = createThunkMiddleware;
 /* harmony default export */ __webpack_exports__["default"] = (thunk);
 
 /***/ }),
-/* 586 */,
-/* 587 */,
 /* 588 */,
 /* 589 */,
 /* 590 */,
@@ -41209,75 +41597,7 @@ thunk.withExtraArgument = createThunkMiddleware;
 /* 788 */,
 /* 789 */,
 /* 790 */,
-/* 791 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ProductItemRelate = __webpack_require__(578);
-
-var _ProductItemRelate2 = _interopRequireDefault(_ProductItemRelate);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ProductWidget = function (_Component) {
-    _inherits(ProductWidget, _Component);
-
-    function ProductWidget() {
-        _classCallCheck(this, ProductWidget);
-
-        return _possibleConstructorReturn(this, (ProductWidget.__proto__ || Object.getPrototypeOf(ProductWidget)).apply(this, arguments));
-    }
-
-    _createClass(ProductWidget, [{
-        key: 'render',
-        value: function render() {
-            var title = this.props.title;
-
-            return _react2.default.createElement(
-                'div',
-                { className: 'row' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'col-md-12 col-sm-12' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'related-posts' },
-                        _react2.default.createElement(
-                            'h5',
-                            null,
-                            title
-                        ),
-                        _react2.default.createElement(_ProductItemRelate2.default, null)
-                    )
-                )
-            );
-        }
-    }]);
-
-    return ProductWidget;
-}(_react.Component);
-
-exports.default = ProductWidget;
-
-/***/ }),
+/* 791 */,
 /* 792 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41294,14 +41614,6 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _CustomCard = __webpack_require__(217);
-
-var _CustomCard2 = _interopRequireDefault(_CustomCard);
-
-var _ModalCard = __webpack_require__(218);
-
-var _ModalCard2 = _interopRequireDefault(_ModalCard);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -41310,58 +41622,156 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ProductItemPage = function (_Component) {
-    _inherits(ProductItemPage, _Component);
+var VertifyPayment = function (_Component) {
+    _inherits(VertifyPayment, _Component);
 
-    function ProductItemPage(props) {
-        _classCallCheck(this, ProductItemPage);
+    function VertifyPayment() {
+        _classCallCheck(this, VertifyPayment);
 
-        var _this = _possibleConstructorReturn(this, (ProductItemPage.__proto__ || Object.getPrototypeOf(ProductItemPage)).call(this, props));
-
-        _this.state = {};
-        _this.showModal = _this.showModal.bind(_this);
-        _this.closeModal = _this.closeModal.bind(_this);
-        return _this;
+        return _possibleConstructorReturn(this, (VertifyPayment.__proto__ || Object.getPrototypeOf(VertifyPayment)).apply(this, arguments));
     }
 
-    _createClass(ProductItemPage, [{
-        key: 'showModal',
-        value: function showModal() {
-            // console.log("show modal")
-            this.setState({ showModal: true });
-        }
-    }, {
-        key: 'closeModal',
-        value: function closeModal() {
-            this.setState({ showModal: false });
-        }
-    }, {
-        key: 'render',
+    _createClass(VertifyPayment, [{
+        key: "render",
         value: function render() {
-            var _this2 = this;
-
-            var arr = [1, 2, 3, 4, 5, 6, 7];
-            var src = this.props.src;
-
             return _react2.default.createElement(
-                'div',
-                { className: 'row', id: 'product-items' },
-                arr.map(function (index) {
-                    return _react2.default.createElement(
-                        'div',
-                        { className: 'product-item col-md-4 col-sm-6', key: index },
-                        _react2.default.createElement(_CustomCard2.default, { key: index, src: 'images/' + src + '/ao-thun-co-co-den-at777-9199-p.png', showModal: _this2.showModal })
-                    );
-                }),
-                _react2.default.createElement(_ModalCard2.default, { closeModal: this.closeModal, showModal: this.state.showModal })
+                "div",
+                { className: "payment" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "btn-payment" },
+                    _react2.default.createElement(
+                        "button",
+                        { className: "btn-checkout" },
+                        "TI\u1EBEN H\xC0NH THANH TO\xC1N"
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "checkout-address" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "address-heading" },
+                        _react2.default.createElement(
+                            "p",
+                            { className: "address-hat" },
+                            "Thanh to\xE1n v\u1EADn chuy\u1EC3n"
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "address-title-container" },
+                            _react2.default.createElement(
+                                "span",
+                                { className: "address-title" },
+                                "Giao h\xE0ng t\u1EDBi"
+                            ),
+                            _react2.default.createElement(
+                                "a",
+                                { href: "#", className: "address-edit" },
+                                "CH\u1EC8NH S\u1EECA"
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "address-info" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "address-name" },
+                            "Nguy\u1EC5n \u0110\u1EE9c Long"
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "address-info-item address-info-value" },
+                            "Thanh Oai H\xE0 N\u1ED9i"
+                        ),
+                        _react2.default.createElement(
+                            "div",
+                            { className: "address-info-item address-info-phone" },
+                            "0915834454"
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "summary-session" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "summary-session-heading" },
+                        "Th\xF4ng tin \u0111\u01A1n h\xE0ng"
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "summary-session-content" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "checkout-summary" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "checkout-summary-rows" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "checkout-summary-row" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-summary-label" },
+                                        "T\u1EA1m t\xEDnh  (2 S\u1EA3n ph\u1EA9m)"
+                                    ),
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-summary-value" },
+                                        "338.000 \u20AB"
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "checkout-summary-row" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-summary-label" },
+                                        "Ph\xED giao h\xE0ng "
+                                    ),
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-summary-value" },
+                                        "MI\u1EC4N PH\xCD"
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                "div",
+                                { className: " checkout-order-total" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "checkout-order-total-row" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-order-total-title" },
+                                        "T\u1ED5ng c\u1ED9ng"
+                                    ),
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "checkout-order-total-fee" },
+                                        "338.000 \u20AB",
+                                        _react2.default.createElement(
+                                            "small",
+                                            { className: "checkout-order-total-fee-tip" },
+                                            "\u0110\xE3 bao g\u1ED3m VAT (n\u1EBFu c\xF3)"
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
             );
         }
     }]);
 
-    return ProductItemPage;
+    return VertifyPayment;
 }(_react.Component);
 
-exports.default = ProductItemPage;
+exports.default = VertifyPayment;
 
 /***/ })
 ],[299]);
