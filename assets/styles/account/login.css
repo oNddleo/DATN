@@ -1,0 +1,78 @@
+.login{
+    background: #f4f4f4;
+}
+.login-title{
+    width: 810px;
+    margin: 50px auto 15px;
+    height: 26px;
+    line-height: 26px;
+}
+.login-title h3 {
+    font-size: 22px;
+    color: #424242;
+    font-weight: 300;
+}
+
+.login-other {
+    float: right;
+    margin-top: -26px;
+    color: #757575;
+}
+.login .mod-login {
+    width: 810px;
+    box-sizing: border-box;
+    margin: 30px auto;
+    padding: 25px 150px;
+    background-color: #fff;
+    color: #757575;
+    overflow: hidden;
+}
+.mod-login .mod-input{
+    padding-bottom: 10px;
+}
+.form-login .email label:after, .form-login .password label:after{
+    content: "*"
+}
+
+.mod-login-forgot {
+    text-align: right;
+    font-size: 16px;
+}
+.mod-input label{
+    font-size: 13px;
+    font-weight: 300;
+}
+.mod-input input {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    height: 40px;
+    line-height: 38px;
+    padding: 0 35px 0 10px;
+    margin-bottom: 2px;
+    outline: none;
+}
+.mod-login-btn {
+    width: 305px;
+    float: right;
+    padding-top: 20px;
+}
+.mod-login-btn button {
+    width: 100%;
+    margin: 0;
+    height: 48px;
+    padding: 0 36px;
+    font-size: 14px;
+    line-height: 46px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #bd0103;
+    border-color: transparent;
+    color: #fff;
+    
+}
+.mod-login-btn button:hover{
+    background: #b9b3b3;
+    color: #bd0103;
+}

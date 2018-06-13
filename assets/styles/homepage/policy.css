@@ -39,7 +39,7 @@
 }
 #policy .pi-wrap h4 span {
     color: #666;
-    font-weight: 400;
+    font-weight: 300;
 }
 .pi-wrap h4 span {
     display: block;
@@ -48,13 +48,13 @@
     color: #CCC;
 }
 .pi-wrap h4, .pi-wrap h4 span {
-    font-weight: 700;
+    font-weight: 300;
     position: relative;
     font-size: 14px;
 }
 
 .pi-wrap h4, .pi-wrap h4 span {
-    font-weight: 700;
+    font-weight: 300;
     position: relative;
     font-size: 14px;
 }

@@ -15,7 +15,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    font-weight: 400;
+    font-weight: 300;
     z-index: 999;
 }
 .heading-sub h5 {
@@ -75,7 +75,7 @@
     margin: -27px 0 0 -27px;
     z-index: 5;
     font-size: 19px;
-    font-weight: 400;
+    font-weight: 300;
     background-color: #bd0103;
     color: #FFF;
     border-color: #bd0103;
@@ -109,7 +109,7 @@
     margin: 10px 0 6px;
 }
 h4 {
-    font-weight: 400;
+    font-weight: 300;
 }
 .product-title a:hover {
     color: #bd0103;
