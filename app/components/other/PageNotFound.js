@@ -4,8 +4,8 @@ class PageNotFound extends Component {
     render() {
         return (
             <div className="page-not-found">
-                <div class="page text-center">
-                    <div class="item">
+                <div className="page text-center">
+                    <div className="item">
                         <h1>404</h1>
                         <p>Trang không tồn tại</p>
                     </div>

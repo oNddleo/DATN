@@ -1,0 +1,54 @@
+.contact{
+    background: #f4f4f4;   
+}
+.contact-heading {
+    width: 100%;
+    max-width: 570px;
+    display: table;
+    margin: 20px 0px 0px;
+    position: relative;
+}
+.contact-panel{
+    background: #fff;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+.contact-panel h5{
+    font-size: 22px;
+    font-weight: 300;
+}
+.col-md-7.contact-panel{
+    margin-left:30px;
+    margin-right: 30px;
+}
+.mod-input textarea {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    height: 200px;
+    line-height: 25px;
+    padding: 0 35px 0 10px;
+    margin-bottom: 2px;
+    outline: none;
+}
+.media-body strong{
+    color: #bd1030;
+}
+.contact-info .media i {
+    background-color: #bd1030;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    height: 35px;
+    line-height: 33px;
+    margin: auto 15px auto auto;
+    padding: 0;
+    text-align: center;
+    width: 35px;
+}
+.contact-details {
+    margin-top: 25px;
+}

@@ -22,29 +22,28 @@ export default class Menu extends Component {
                                     <li className="hidden-xs hidden-sm">
                                         <div className="tbr-info">
                                             <span>
-                                                <a href="/lien-he.html" title="lien he">Liên hệ</a>
+                                                <a href="/contact" title="lien he">Liên hệ</a>
                                             </span>
                                         </div>
                                     </li>
                                     <li className="hidden-xs">
-                                        <div className="tbr-info"> <span> <a href="/ban-do.html" title="ban do">Bản đồ</a></span>
-                                        </div>
-                                    </li>
-                                    <li className="hidden-xs">
                                         <div className="tbr-info"> <span>
-                                            <a href="/huong-dan-mua-hang.html">Hướng dẫn mua hàng</a></span>
+                                            <a href="/guide">Hướng dẫn mua hàng</a>
+                                        </span>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="tbr-info">
                                             <span>
-                                                <a href="/gioi-thieu.html" title="gioi thieu">Giới thiệu</a></span>
+                                                <a href="/introduction" title="gioi thieu">Giới thiệu</a>
+                                            </span>
                                         </div>
                                     </li>
                                     <li>
                                         <div className="tbr-info">
                                             <span>
-                                                <a href="/login" title="login">Đăng nhập</a></span>
+                                                <a href="/login" title="login">Đăng nhập</a>
+                                            </span>
                                         </div>
                                     </li>
                                 </ul>

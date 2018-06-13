@@ -8,6 +8,8 @@ import Register from 'app/components/account/Register'
 import ForgotPassword from 'app/components/account/ForgotPassword'
 import VertifyOrder from 'app/components/vertifyOrder/VertifyOrder'
 import PageNotFound from 'app/components/other/PageNotFound'
+import Contact from 'app/components/other/Contact'
+import Introduction from 'app/components/other/Introduction'
 var store = require('store');
 export default class App extends Component {
     render() {
@@ -23,6 +25,8 @@ export default class App extends Component {
                             <Route path='/register' component={Register} />
                             <Route path='/register' component={Register} />
                             <Route path='/order' component={VertifyOrder} />
+                            <Route path='/contact' component={Contact} />
+                            <Route path='/introduction' component={Introduction} />
                             <Route render={function () { return (<PageNotFound />) }} />
                             {/* <ShopContent url={'images/bannerShop/quan-kaki-nam-banner.jpg'}/> */}
                         </Switch>

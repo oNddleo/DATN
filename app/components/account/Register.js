@@ -8,7 +8,7 @@ class Register extends Component {
                     <div className="login-title">
                         <h3>Tạo tài khoản Wingshoes</h3>
                         <div className="login-other">
-                            <span>Bạn đã là thành viên?<Link to={"/login"}>Đăng nhập</Link> tại đây</span>
+                            <span>Bạn đã là thành viên?<Link to={"/login"}> Đăng nhập</Link> tại đây</span>
                         </div>
                     </div>
                     <div className="form-login">

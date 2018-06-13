@@ -22,10 +22,10 @@ class ModalCard extends Component {
             <Modal show={showModal} bsSize="lg" dialogClassName="modal-product" onHide={this.closeModal}>
                 <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.closeModal}><i className="fa fa-times"></i></button>
                 <div className="row">
-                    <div className="col-md-5 col-sm-6" >
+                    <div className="col-md-6 col-sm-6" >
                         <CustomSlider src={src} />
                     </div>
-                    <div className="col-md-5 col-sm-6">
+                    <div className="col-md-6 col-sm-6">
                         <div className="product-single">
                             <div className="ps-header">
                                 <span className="badge offer" id="quickBuySaleOff" style={{ display: "none" }}>-0%</span>
@@ -47,7 +47,7 @@ class ModalCard extends Component {
                                 <div className="col-md-7 col-sm-7"></div>
                                 <div className="col-md-5 col-sm-5"></div>
                             </div>
-                            <a className="myBtn myBtn-Primary" href="javascript:void(0)" id="buyNowModal" have-size="1" product="4096">
+                            <a className="myBtn myBtn-Primary" href="#" id="buyNowModal" have-size="1" product="4096">
                                 <i className="fa fa-shopping-cart"></i> Đăng ký mua
                             </a>
                             <a className="myBtn myBtn-Blue hidden-xs" style={{ float: "right" }} href="/ao-vest-cao-cap-xam-chuot-dam-av2l1054-309.html" id="quickBuyDetailProduct">Xem chi tiết
