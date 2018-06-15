@@ -22,7 +22,7 @@ module.exports = {
     password: {
       type: "string"
     },
-    name: {
+    fullname: {
       type: "string",
       required: true
     }
