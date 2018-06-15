@@ -36599,6 +36599,8 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(0);
@@ -36609,6 +36611,8 @@ var _reactRouterDom = __webpack_require__(69);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -36618,13 +36622,34 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Register = function (_Component) {
     _inherits(Register, _Component);
 
-    function Register() {
+    function Register(props) {
         _classCallCheck(this, Register);
 
-        return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).call(this, props));
     }
 
     _createClass(Register, [{
+        key: 'onChange',
+        value: function onChange(event) {
+            this.setState(_defineProperty({}, event.target.name, event.target.value));
+        }
+    }, {
+        key: 'submit',
+        value: function submit(event) {
+            event.preventDefault();
+            //Check empty => input change color and show text
+            //Check password with repassword => change color and show text
+            //Encrypt password
+            var infoRegister = _extends({}, this.state);
+            console.log('...', infoRegister);
+            //Post
+            io.socket.post('/users/create', infoRegister, function (resData, jwRes) {
+                if (jwRes.statusCode === 200) {
+                    console.log("Thêm thành công => redirect vào trang chủ");
+                }
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
@@ -36662,7 +36687,7 @@ var Register = function (_Component) {
                         { className: 'form-login' },
                         _react2.default.createElement(
                             'form',
-                            null,
+                            { onSubmit: this.submit.bind(this), action: "/" },
                             _react2.default.createElement(
                                 'div',
                                 { className: 'mod-login' },
@@ -36674,7 +36699,7 @@ var Register = function (_Component) {
                                         null,
                                         '\u0110\u1ECBa ch\u1EC9 email'
                                     ),
-                                    _react2.default.createElement('input', { type: 'text', placeholder: 'Vui l\xF2ng nh\u1EADp email c\u1EE7a b\u1EA1n', autoComplete: 'username' })
+                                    _react2.default.createElement('input', { type: 'text', name: 'username', placeholder: 'Vui l\xF2ng nh\u1EADp email c\u1EE7a b\u1EA1n', autoComplete: 'username', onChange: this.onChange.bind(this) })
                                 ),
                                 _react2.default.createElement(
                                     'div',
@@ -36684,7 +36709,7 @@ var Register = function (_Component) {
                                         null,
                                         'M\u1EADt kh\u1EA9u'
                                     ),
-                                    _react2.default.createElement('input', { type: 'password', placeholder: 'T\u1ED1i thi\u1EC3u 6 k\xED t\u1EF1 bao g\u1ED3m c\u1EA3 ch\u1EEF v\xE0 s\u1ED1', autoComplete: 'password' })
+                                    _react2.default.createElement('input', { type: 'password', name: 'password', placeholder: 'T\u1ED1i thi\u1EC3u 6 k\xED t\u1EF1 bao g\u1ED3m c\u1EA3 ch\u1EEF v\xE0 s\u1ED1', autoComplete: 'password', onChange: this.onChange.bind(this) })
                                 ),
                                 _react2.default.createElement(
                                     'div',
@@ -36694,7 +36719,7 @@ var Register = function (_Component) {
                                         null,
                                         'Nh\u1EADp l\u1EA1i m\u1EADt kh\u1EA9u'
                                     ),
-                                    _react2.default.createElement('input', { type: 'password', placeholder: 'Vui l\xF2ng nh\u1EADp l\u1EA1i m\u1EADt kh\u1EA9u', autoComplete: 'repassword' })
+                                    _react2.default.createElement('input', { type: 'password', name: 'repassword', placeholder: 'Vui l\xF2ng nh\u1EADp l\u1EA1i m\u1EADt kh\u1EA9u', autoComplete: 'repassword', onChange: this.onChange.bind(this) })
                                 ),
                                 _react2.default.createElement(
                                     'div',
@@ -36704,7 +36729,7 @@ var Register = function (_Component) {
                                         null,
                                         'T\xEAn'
                                     ),
-                                    _react2.default.createElement('input', { type: 'text', placeholder: 'H\u1ECD t\xEAn' })
+                                    _react2.default.createElement('input', { type: 'text', name: 'fullname', placeholder: 'H\u1ECD t\xEAn', autoComplete: 'fullname', onChange: this.onChange.bind(this) })
                                 ),
                                 _react2.default.createElement(
                                     'div',
