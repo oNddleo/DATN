@@ -17,7 +17,7 @@ module.exports = {
     username: {
       type: "string",
       unique: true,
-      email:true
+      email: true
     },
     password: {
       type: "string"
@@ -25,6 +25,10 @@ module.exports = {
     fullname: {
       type: "string",
       required: true
+    },
+    orders: {
+      collection: 'order',
+      via: 'owner'
     }
   }
 };

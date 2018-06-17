@@ -1,7 +1,7 @@
 /**
- * UsersController
+ * UserController
  *
- * @description :: Server-side logic for managing users
+ * @description :: Server-side logic for managing user
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 var Encrypt = require('../utils/Encrypt')
@@ -12,7 +12,7 @@ module.exports = {
         let data = req.body;
         let passEncrypt = await Encrypt.encryptPassword(req.body.password);
         data.password = passEncrypt;
-        Users.create({...data}).exec((err, result) => {
+        User.create({...data}).exec((err, result) => {
             if (err) {
                 return res.send(Message.sendErrorJSON(err, Type.errorMessage.USER_REGISTED))
             }
@@ -24,7 +24,7 @@ module.exports = {
         let data  = req.body;
         let passEncrypt = await Encrypt.encryptPassword(req.body.password);
         data.password = passEncrypt;
-        Users.update({ where: { id: req.params.id } }, data ).exec((err, updated) => {
+        User.update({ where: { id: req.params.id } }, data ).exec((err, updated) => {
             if (err) {
                 res.send(Message.sendErrorJSON(err, Type.errorMessage.USER_NOT_FOUND))
             }
@@ -32,7 +32,7 @@ module.exports = {
         })
     },
     delete: (req, res) => {
-        Users.destroy({ where: { id: req.params.id } }).exec((err, result) => {
+        User.destroy({ where: { id: req.params.id } }).exec((err, result) => {
             if (err) {
                 res.send(Message.sendErrorJSON(err, Type.errorMessage.USER_NOT_FOUND))
             }
