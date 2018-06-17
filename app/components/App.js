@@ -10,6 +10,7 @@ import VertifyOrder from 'app/components/vertifyOrder/VertifyOrder'
 import PageNotFound from 'app/components/other/PageNotFound'
 import Contact from 'app/components/other/Contact'
 import Introduction from 'app/components/other/Introduction'
+import Test from 'app/components/other/Test'
 var store = require('store');
 export default class App extends Component {
     render() {
@@ -27,7 +28,9 @@ export default class App extends Component {
                             <Route path='/order' component={VertifyOrder} />
                             <Route path='/contact' component={Contact} />
                             <Route path='/introduction' component={Introduction} />
+                            <Route path='/upload' component={Test} />
                             <Route render={function () { return (<PageNotFound />) }} />
+                           
                             {/* <ShopContent url={'images/bannerShop/quan-kaki-nam-banner.jpg'}/> */}
                         </Switch>
                     </Layout>
