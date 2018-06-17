@@ -17,7 +17,7 @@ class Register extends Component {
         let infoRegister = { ...this.state }
         console.log('...', infoRegister)
         //Post
-        io.socket.post('/users/create', infoRegister, function (resData, jwRes) {
+        io.socket.post('/user/create', infoRegister, function (resData, jwRes) {
             if(jwRes.statusCode === 200 ){
                 console.log("Thêm thành công => redirect vào trang chủ")
             }
