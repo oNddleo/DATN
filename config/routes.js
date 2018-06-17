@@ -45,6 +45,6 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-  'PUT /users/:id' : 'UsersController.update',
-  'DELETE /users/:id' : 'UsersController.delete'
+  'PUT /user/:id' : 'UsersController.update',
+  'DELETE /user/:id' : 'UsersController.delete'
 };
