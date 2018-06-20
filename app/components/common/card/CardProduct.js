@@ -1,20 +1,22 @@
 import React, { Component } from 'react'
 import Slider from 'react-slick'
 import CustomCard from './components/CustomCard'
-import { getListImages } from 'app/components/common/pageutils/GetListImage'
+// import { getListImages } from 'app/components/common/pageutils/GetListImage'
 import ModalCard from './components/ModalCard'
 
 class CardProduct extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false
+      showModal: false,
+      detail: {}
     }
-    this.showModal = this.showModal.bind(this)
+    this.openModel = this.openModel.bind(this)
     this.closeModal = this.closeModal.bind(this)
+
   }
-  showModal() {
-    this.setState({ showModal: true })
+  openModel(data) {
+    this.setState({ showModal: true, detail: data })
   }
   closeModal() {
     this.setState({ showModal: false })
@@ -39,13 +41,9 @@ class CardProduct extends Component {
               <h5><span>{title}</span></h5>
             </div>
             <Slider {...settings}>
-              { products.map((element, index) => (<CustomCard data-index={index} key={index} data={element} showModal={this.showModal}/>))}
-              {/* { 
-                getListImages(src).map((e, index) => {
-                return <CustomCard data-index={index} key={index }src={`images/${src}/${e}`} showModal={this.showModal}/>})
-               } */}
+              { products.map((element, index) => (<CustomCard data-index={index} key={index} data={element} open={this.openModel}/>))}
             </ Slider>
-            <ModalCard closeModal={this.closeModal} showModal={this.state.showModal} />
+            <ModalCard closeModal={this.closeModal} modal={this.state.showModal} data={this.state.detail}/>
           </div>
         </div>
       </div>

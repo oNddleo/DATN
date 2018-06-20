@@ -3,44 +3,46 @@ import { Modal } from 'react-bootstrap'
 import Slider from 'react-slick'
 import { listImagesModalProduct } from 'app/components/common/pageutils/GetListImage'
 
-
-
 class ModalCard extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            data: {}
+        }
         this.closeModal = this.closeModal.bind(this);
     }
     closeModal() {
         this.props.closeModal();
     }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.data) {
+            this.setState({data: nextProps.data })
+        }
+    }
     render() {
-
         let src = 'modalProducts'
-        let { showModal } = this.props;
-        // console.log('...modal props', this.props)
+        let { data } = this.state
         return (
-            <Modal show={showModal} bsSize="lg" dialogClassName="modal-product" onHide={this.closeModal}>
+            <Modal show={this.props.modal} bsSize="lg" dialogClassName="modal-product" onHide={this.closeModal}>
                 <button type="button" className="close" data-dismiss="modal" aria-hidden="true" onClick={this.closeModal}><i className="fa fa-times"></i></button>
                 <div className="row">
-                    <div className="col-md-6 col-sm-6" >
+                    <div className="col-md-5 col-sm-6" >
                         <CustomSlider src={src} />
                     </div>
-                    <div className="col-md-6 col-sm-6">
+                    <div className="col-md-7 col-sm-6">
                         <div className="product-single">
                             <div className="ps-header">
-                                <span className="badge offer" id="quickBuySaleOff" style={{ display: "none" }}>-0%</span>
-                                <h3 id="quickBuyName">Áo Thun Có Cổ Trắng AT777</h3>
-                                <div className="ps-price" id="quickBuyPrice">215,000</div>
+                                <span className="badge offer" id="quickBuySaleOff" style={{ display: "none" }}>-0%`${data.promo}%`</span>
+                                <h3 id="quickBuyName">{data.productName}</h3>
+                                <div className="ps-price" id="quickBuyPrice">{data.pricePromo}</div>
                             </div>
-                            <div className="ps-stock"> Tình trạng: <span id="quickBuyStock">Còn hàng</span>
+                            <div className="ps-stock"> Tình trạng: <span id="quickBuyStock">{data.status}</span>
                             </div>
                             <div className="line"></div>
                             <div className="row select-wraps" id="">
                                 <div className="col-md-12">
                                     <p>Điểm nổi bật:</p>
-                                    <p id="quickBuyHighlight">Áo Vest Cao Cấp Xám Chuột Đậm AV2L1054 với form áo body ôm vừa vặn cơ thể, tạo vẻ đẹp trẻ trung, nam tính cho phái mạnh.Thiết kế cách tân hiện đại với kiểu áo 1 nút, cổ áo ve nhỏ phối viền đen cá tính. Có túi nắp hai bên hông, túi ngực cùng phối viền đồng màu, khiến bộ vest hài hòa, phong cách
-                                        - Màu xám chuột đậm thời trang, hợp mốt, tạo vẻ sang trọng cho quý ông. Chất liệu vải âu cao cấp, có lớp lót bên trong, bền đẹp, không phai màu, dễ giặt ủi.
-                                </p>
+                                    <p id="quickBuyHighlight">{data.info}</p>
                                 </div>
                             </div>
                             <div className="row select-wraps">
@@ -50,7 +52,7 @@ class ModalCard extends Component {
                             <a className="myBtn myBtn-Primary" href="#" id="buyNowModal" have-size="1" product="4096">
                                 <i className="fa fa-shopping-cart"></i> Đăng ký mua
                             </a>
-                            <a className="myBtn myBtn-Blue hidden-xs" style={{ float: "right" }} href="/ao-vest-cao-cap-xam-chuot-dam-av2l1054-309.html" id="quickBuyDetailProduct">Xem chi tiết
+                            <a className="myBtn myBtn-Blue hidden-xs" style={{ float: "right" }} href="#" id="quickBuyDetailProduct">Xem chi tiết
                             </a>
                         </div>
                     </div>

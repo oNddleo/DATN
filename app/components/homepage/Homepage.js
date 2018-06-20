@@ -33,7 +33,7 @@ export default class Homepage extends Component {
   }
   getPromoProduct() {
     let that = this
-    io.socket.post('/product/getSaleProducts', function (resData, jwRes) {
+    io.socket.post('/product/getPromoProducts', function (resData, jwRes) {
       if (jwRes.statusCode === 200) {
         that.state.dataPromoProduct.title = 'Sản phẩm khuyến mại'
         that.state.dataPromoProduct.products = resData.data
@@ -48,16 +48,14 @@ export default class Homepage extends Component {
   }
   render() {
     let { dataNewProduct, dataSaleProduct, dataPromoProduct } = this.state
-    // console.log('state', dataNewProduct)
     return (
       <div>
         <div className="slider-wrap slider-carousel">
           <TopProduct />
         </div>
         <Policy />
-        {/* <CardProduct title="Sản phẩm mới nhất" src="newProducts" />
-        <CardProduct title="Sản phẩm bán chạy nhất" src="saleProducts" />
-        <CardProduct title="Sản phẩm khuyến mại" src="promoProducts" /> */}
+        <CardProduct data={dataNewProduct} />
+        <CardProduct data={dataNewProduct} />
         <CardProduct data={dataNewProduct} />
         <div className="space20"></div>
       </div >
