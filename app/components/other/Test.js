@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
-import {post} from 'axios'
+import { post } from 'axios'
 class Test extends Component {
     constructor(props) {
         super(props);
         this.onSubmit = this.onSubmit.bind(this);
+
     }
     onChange(e) {
-        console.log('e.target.value', e.target.files[0])
-        let file = e.target.files[0]
-        this.setState({ title: file.name, file })
+        if (e.target.files) {
+            let file = e.target.files
+            this.setState({ file })
+        }
     }
     onSubmit(e) {
-        console.log('upload')
         e.preventDefault() //Stop formsubmit
-        this.fileUpload(this.state.file).then((response) => {
-            console.log(response);
-        })
+        var that = this;
+        let file = this.state.file;
+        if(file){
+            for(let i = 0; i < file.length; i++){
+                that.fileUpload(file[i]).then((response) => {
+                    console.log(response);
+                })
+            }
+        }
     }
     fileUpload(file) {
-        const url = 'http://localhost:1337/upload/uploadTest';
+        const url = 'http://localhost:1337/image/upload';
         const formData = new FormData();
         formData.append('file', file)
         const config = {
@@ -32,7 +39,7 @@ class Test extends Component {
         return (
             <div className="container" style={{ padding: "200px" }}>
                 <form onSubmit={this.onSubmit}>
-                    <input type="file" onChange={this.onChange.bind(this)} />
+                    <input type="file" onChange={this.onChange.bind(this)} multiple />
                     <button type="submit" >Upload</button>
                 </form>
 
