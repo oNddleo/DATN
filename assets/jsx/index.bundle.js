@@ -21165,9 +21165,9 @@ var Homepage = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Homepage.__proto__ || Object.getPrototypeOf(Homepage)).call(this, props));
 
     _this.state = {
-      dataNewProduct: { title: '', data: '' },
-      dataSaleProduct: { title: '', data: '' },
-      dataPromoProduct: { title: '', data: '' }
+      dataNewProduct: { title: '', products: [] },
+      dataSaleProduct: { title: '', products: [] },
+      dataPromoProduct: { title: '', products: [] }
     };
     return _this;
   }
@@ -21178,10 +21178,9 @@ var Homepage = function (_Component) {
       var that = this;
       io.socket.post('/product/getNewProducts', function (resData, jwRes) {
         if (jwRes.statusCode === 200) {
-          console.log('New Product');
           that.state.dataNewProduct.title = 'Sản phẩm mới nhất';
-          that.state.dataNewProduct.data = resData.data;
-          that.setState({ dataNewProduct: dataNewProduct });
+          that.state.dataNewProduct.products = resData.data;
+          that.setState({ dataNewProduct: that.state.dataNewProduct });
         }
       });
     }
@@ -21192,8 +21191,8 @@ var Homepage = function (_Component) {
       io.socket.post('/product/getSaleProducts', function (resData, jwRes) {
         if (jwRes.statusCode === 200) {
           that.state.dataSaleProduct.title = 'Sản phẩm bán chạy nhất';
-          that.state.dataSaleProduct.data = resData.data;
-          that.setState({ dataSaleProduct: dataSaleProduct });
+          that.state.dataSaleProduct.products = resData.data;
+          that.setState({ dataSaleProduct: that.state.dataSaleProduct });
         }
       });
     }
@@ -21204,23 +21203,27 @@ var Homepage = function (_Component) {
       io.socket.post('/product/getSaleProducts', function (resData, jwRes) {
         if (jwRes.statusCode === 200) {
           that.state.dataPromoProduct.title = 'Sản phẩm khuyến mại';
-          that.state.dataPromoProduct.data = resData.data;
-          that.setState({ dataPromoProduct: dataPromoProduct });
+          that.state.dataPromoProduct.products = resData.data;
+          that.setState({ dataPromoProduct: that.state.dataPromoProduct });
         }
       });
     }
-    // componentDidMount() {
-    //   console.log('did mount')
-    //   this.getNewProduct()
-    //   this.getSaleProduct()
-    //   this.getPromoProduct()
-    // }
-
+  }, {
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      this.getNewProduct();
+      this.getSaleProduct();
+      this.getPromoProduct();
+    }
   }, {
     key: 'render',
     value: function render() {
-      // let { dataNewProduct } = this.state
-      console.log('state', this.state);
+      var _state = this.state,
+          dataNewProduct = _state.dataNewProduct,
+          dataSaleProduct = _state.dataSaleProduct,
+          dataPromoProduct = _state.dataPromoProduct;
+      // console.log('state', dataNewProduct)
+
       return _react2.default.createElement(
         'div',
         null,
@@ -21230,9 +21233,7 @@ var Homepage = function (_Component) {
           _react2.default.createElement(_TopProduct2.default, null)
         ),
         _react2.default.createElement(_Policy2.default, null),
-        _react2.default.createElement(_CardProduct2.default, { title: 'S\u1EA3n ph\u1EA9m m\u1EDBi nh\u1EA5t', src: 'newProducts' }),
-        _react2.default.createElement(_CardProduct2.default, { title: 'S\u1EA3n ph\u1EA9m b\xE1n ch\u1EA1y nh\u1EA5t', src: 'saleProducts' }),
-        _react2.default.createElement(_CardProduct2.default, { title: 'S\u1EA3n ph\u1EA9m khuy\u1EBFn m\u1EA1i', src: 'promoProducts' }),
+        _react2.default.createElement(_CardProduct2.default, { data: dataNewProduct }),
         _react2.default.createElement('div', { className: 'space20' })
       );
     }
@@ -25224,7 +25225,6 @@ var CardProduct = function (_Component) {
   _createClass(CardProduct, [{
     key: 'showModal',
     value: function showModal() {
-      // console.log("show modal")
       this.setState({ showModal: true });
     }
   }, {
@@ -25233,14 +25233,16 @@ var CardProduct = function (_Component) {
       this.setState({ showModal: false });
     }
   }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {}
+  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      console.log('props card product', this.props);
-      var _props = this.props,
-          title = _props.title,
-          src = _props.src;
+      var _props$data = this.props.data,
+          title = _props$data.title,
+          products = _props$data.products;
 
       var settings = {
         className: "products-carousel",
@@ -25249,8 +25251,6 @@ var CardProduct = function (_Component) {
         slidesToShow: 4,
         slidesToScroll: 1
       };
-      // console.log("card-product props: ", this.props)
-
       return _react2.default.createElement(
         'div',
         { className: 'container padding40' },
@@ -25276,8 +25276,8 @@ var CardProduct = function (_Component) {
             _react2.default.createElement(
               _reactSlick2.default,
               settings,
-              (0, _GetListImage.getListImages)(src).map(function (e, index) {
-                return _react2.default.createElement(_CustomCard2.default, { 'data-index': index, key: index, src: 'images/' + src + '/' + e, showModal: _this2.showModal });
+              products.map(function (element, index) {
+                return _react2.default.createElement(_CustomCard2.default, { 'data-index': index, key: index, data: element, showModal: _this2.showModal });
               })
             ),
             _react2.default.createElement(_ModalCard2.default, { closeModal: this.closeModal, showModal: this.state.showModal })
@@ -25344,14 +25344,11 @@ var CustomCard = function (_Component) {
     key: 'render',
     value: function render() {
       var _props = this.props,
-          src = _props.src,
           dataIndex = _props['data-index'],
-          showModal = _props.showModal,
-          props = _objectWithoutProperties(_props, ['src', 'data-index', 'showModal']);
+          data = _props.data,
+          props = _objectWithoutProperties(_props, ['data-index', 'data']);
 
-      // console.log('custom card props: ', this.props);
-
-
+      console.log('data', this.props);
       return _react2.default.createElement(
         'div',
         _extends({}, props, { 'data-index': dataIndex, key: dataIndex, className: 'product-item' }),
@@ -25360,8 +25357,8 @@ var CustomCard = function (_Component) {
           { className: 'item-thumb' },
           _react2.default.createElement(
             'a',
-            { title: '\xC1o Thun C\xF3 C\u1ED5 \u0110en AT777' },
-            _react2.default.createElement('img', { src: src, className: 'img-responsive', alt: '\xC1o Thun C\xF3 C\u1ED5 \u0110en AT777' })
+            { title: data.productName },
+            _react2.default.createElement('img', { src: 'images/testUpload/612aa517-6687-4fb4-852d-884483b5eaab.jpg', className: 'img-responsive', alt: data.productName })
           ),
           _react2.default.createElement(
             'div',
@@ -25382,18 +25379,18 @@ var CustomCard = function (_Component) {
             { className: 'product-title' },
             _react2.default.createElement(
               'a',
-              { title: '\xC1o Thun C\xF3 C\u1ED5 \u0110en AT777' },
-              '\xC1o Thun C\xF3 C\u1ED5 \u0110en AT777'
+              { title: data.productName },
+              data.productName
             )
           ),
           _react2.default.createElement(
             'span',
             { className: 'product-price' },
-            ' 215.000',
+            data.pricePromo,
             _react2.default.createElement(
               'em',
               { style: { textDecoration: "line-through" } },
-              ' 245.000'
+              data.priceOriginal
             )
           )
         )
