@@ -16,15 +16,15 @@ module.exports = {
         productName: {
             type: "string"
         },
-        owner: {
-            model: "image"
+        images:{
+            collection: 'image',
+            via: 'productID'
         },
         priceOriginal: {
-            type: "number",
-            required: true
+            type: "integer"
         },
         promo: {
-            type: "number"
+            type: "integer"
         },
         status: {
             type: "string"
@@ -36,7 +36,7 @@ module.exports = {
             type: "string"
         },
         quantity: {
-            type: "number"
+            type: "integer"
         },
         // orders: {
         //     collection: 'order',

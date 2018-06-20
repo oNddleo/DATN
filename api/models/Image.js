@@ -6,13 +6,12 @@
  */
 
 module.exports = {
-    tableName: 'files',
     attributes: {
         id: {
             type: 'integer',
             primaryKey: true,
             unique: true,
-            autoIncrement: true
+            autoIncrement: true,
         },
         fileName: {
             type: 'string',
@@ -21,6 +20,9 @@ module.exports = {
         path: {
             type: 'string',
             required: true
+        },
+        productID:{
+            model: 'product'
         }
     }
 };
