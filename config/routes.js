@@ -45,6 +45,22 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-  'PUT /user/:id' : 'UsersController.update',
-  'DELETE /user/:id' : 'UsersController.delete'
+  /***************************************************************************
+  * Route User                                                            *
+  ***************************************************************************/
+  'PUT /user/:id' : 'UserController.update',
+  'DELETE /user/:id' : 'UserController.delete',
+
+  /***************************************************************************
+  * Route Product                                                            *
+  ***************************************************************************/
+  'GET /product/get' : 'ProductController.get',
+  'PUT /product/:id' : 'ProductController.update',
+  'DELETE /product/:id' : 'ProductController.delete',
+
+  /***************************************************************************
+  * Route Image                                                            *
+  ***************************************************************************/
+  'GET /image/get' : 'ImageController.get',
+  'DELETE /image/:id' : 'ImageController.delete'
 };
