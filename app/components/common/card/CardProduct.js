@@ -22,6 +22,7 @@ class CardProduct extends Component {
   }
 
   render() {
+    console.log('props card product', this.props)
     let { title, src } = this.props;
     const settings = {
       className: "products-carousel",
