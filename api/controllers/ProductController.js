@@ -33,12 +33,16 @@ module.exports = {
                 return res.send(Message.sendSuccessJSON(Type.successMessage.PRODUCT_INFO, result))
             })
     },
+    /**
+     * Need to check image path does not exist 
+     * Should have error image
+     */
     getNewProducts: function (req, res) {
-        var end = moment(moment().format("YYYY-MM-DD")).toISOString()
+        var end = moment(moment().format("YYYY-MM-DD")).add(1,'days').toISOString()
         var start = moment(moment().format("YYYY-MM-DD")).subtract(10, 'days').toISOString()
-        sails.log('start: ', start, 'end: ', end)
+        // sails.log('start: ', start, 'end: ', end)
         Product
-            .find({ createdAt: { '>': start, '<': end } })
+            .find({ createdAt: { '>': start, '<=': end } })
             .populate('images', { select: ['path', 'fileName'] })
             .exec(function (err, result) {
                 if (err) res.send(Message.sendErrorJSON(err, Type.errorMessage.ERROR_SYSTEM))
