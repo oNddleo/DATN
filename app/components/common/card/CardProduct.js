@@ -13,17 +13,17 @@ class CardProduct extends Component {
     this.showModal = this.showModal.bind(this)
     this.closeModal = this.closeModal.bind(this)
   }
-  showModal(){
-    // console.log("show modal")
-    this.setState({showModal: true})
+  showModal() {
+    this.setState({ showModal: true })
   }
-  closeModal(){
-    this.setState({showModal: false})
+  closeModal() {
+    this.setState({ showModal: false })
   }
+  componentDidMount() {
 
+  }
   render() {
-    console.log('props card product', this.props)
-    let { title, src } = this.props;
+    let { title, products } = this.props.data
     const settings = {
       className: "products-carousel",
       infinite: true,
@@ -31,10 +31,7 @@ class CardProduct extends Component {
       slidesToShow: 4,
       slidesToScroll: 1
     };
-    // console.log("card-product props: ", this.props)
-
     return (
-
       <div className="container padding40">
         <div className="row">
           <div className="col-md-12 col-sm-12">
@@ -42,12 +39,13 @@ class CardProduct extends Component {
               <h5><span>{title}</span></h5>
             </div>
             <Slider {...settings}>
-              { 
+              { products.map((element, index) => (<CustomCard data-index={index} key={index} data={element} showModal={this.showModal}/>))}
+              {/* { 
                 getListImages(src).map((e, index) => {
                 return <CustomCard data-index={index} key={index }src={`images/${src}/${e}`} showModal={this.showModal}/>})
-               }
+               } */}
             </ Slider>
-            <ModalCard closeModal={this.closeModal} showModal={this.state.showModal}/>
+            <ModalCard closeModal={this.closeModal} showModal={this.state.showModal} />
           </div>
         </div>
       </div>

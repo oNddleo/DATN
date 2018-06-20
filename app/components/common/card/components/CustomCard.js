@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 
-
-
 class CustomCard extends Component {
   constructor(props) {
     super(props);
@@ -11,14 +9,13 @@ class CustomCard extends Component {
     this.props.showModal()
   }
   render() {
-    const { src, 'data-index': dataIndex, showModal, ...props } = this.props;
-
-    // console.log('custom card props: ', this.props);
+    let { 'data-index': dataIndex, data, ...props } = this.props;
+    console.log('data', this.props)
     return (
       <div {...props} data-index={dataIndex} key={dataIndex} className="product-item">
         <div className="item-thumb">
-          <a title="Áo Thun Có Cổ Đen AT777">
-            <img src={src} className="img-responsive" alt="Áo Thun Có Cổ Đen AT777" />
+          <a title={data.productName}>
+            <img src={'images/testUpload/612aa517-6687-4fb4-852d-884483b5eaab.jpg'} className="img-responsive" alt={data.productName} />
           </a>
           <div className="overlay-rmore">
             <a className="addcart quickBuy" onClick={this.onClick} href="#">
@@ -26,10 +23,10 @@ class CustomCard extends Component {
             </a>
           </div> </div>
         <div className="product-info">
-          <h4 className="product-title"><a title="Áo Thun Có Cổ Đen AT777">Áo Thun Có Cổ Đen AT777</a>
+          <h4 className="product-title"><a title={data.productName}>{data.productName}</a>
           </h4>
-          <span className="product-price"> 215.000
-            <em style={{ textDecoration: "line-through" }}> 245.000</em>
+          <span className="product-price">{data.pricePromo}
+            <em style={{ textDecoration: "line-through" }}>{data.priceOriginal}</em>
           </span>
         </div>
       </div>

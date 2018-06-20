@@ -6,19 +6,18 @@ export default class Homepage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataNewProduct: { title: '', data: '' },
-      dataSaleProduct: { title: '', data: '' },
-      dataPromoProduct: { title: '', data: '' }
+      dataNewProduct: { title: '', products: [] },
+      dataSaleProduct: { title: '', products: [] },
+      dataPromoProduct: { title: '', products: [] }
     }
   }
   getNewProduct() {
     let that = this
     io.socket.post('/product/getNewProducts', function (resData, jwRes) {
       if (jwRes.statusCode === 200) {
-        console.log('New Product')
         that.state.dataNewProduct.title = 'Sản phẩm mới nhất'
-        that.state.dataNewProduct.data = resData.data
-        that.setState({ dataNewProduct })
+        that.state.dataNewProduct.products = resData.data
+        that.setState({ dataNewProduct: that.state.dataNewProduct })
       }
     })
   }
@@ -27,8 +26,8 @@ export default class Homepage extends Component {
     io.socket.post('/product/getSaleProducts', function (resData, jwRes) {
       if (jwRes.statusCode === 200) {
         that.state.dataSaleProduct.title = 'Sản phẩm bán chạy nhất'
-        that.state.dataSaleProduct.data = resData.data
-        that.setState({ dataSaleProduct })
+        that.state.dataSaleProduct.products = resData.data
+        that.setState({ dataSaleProduct: that.state.dataSaleProduct })
       }
     })
   }
@@ -37,30 +36,29 @@ export default class Homepage extends Component {
     io.socket.post('/product/getSaleProducts', function (resData, jwRes) {
       if (jwRes.statusCode === 200) {
         that.state.dataPromoProduct.title = 'Sản phẩm khuyến mại'
-        that.state.dataPromoProduct.data = resData.data
-        that.setState({ dataPromoProduct })
+        that.state.dataPromoProduct.products = resData.data
+        that.setState({ dataPromoProduct: that.state.dataPromoProduct })
       }
     })
   }
-  // componentDidMount() {
-  //   console.log('did mount')
-  //   this.getNewProduct()
-  //   this.getSaleProduct()
-  //   this.getPromoProduct()
-  // }
+  componentWillMount() {
+    this.getNewProduct()
+    this.getSaleProduct()
+    this.getPromoProduct()
+  }
   render() {
-    // let { dataNewProduct } = this.state
-    console.log('state', this.state)
+    let { dataNewProduct, dataSaleProduct, dataPromoProduct } = this.state
+    // console.log('state', dataNewProduct)
     return (
       <div>
         <div className="slider-wrap slider-carousel">
           <TopProduct />
         </div>
         <Policy />
-        <CardProduct title="Sản phẩm mới nhất" src="newProducts" />
+        {/* <CardProduct title="Sản phẩm mới nhất" src="newProducts" />
         <CardProduct title="Sản phẩm bán chạy nhất" src="saleProducts" />
-        <CardProduct title="Sản phẩm khuyến mại" src="promoProducts" />
-        {/* <CardProduct data={dataNewProduct} /> */}
+        <CardProduct title="Sản phẩm khuyến mại" src="promoProducts" /> */}
+        <CardProduct data={dataNewProduct} />
         <div className="space20"></div>
       </div >
 
